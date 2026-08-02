@@ -21,7 +21,7 @@ export const zhCN: SiteCopy = {
     byline: "由 Steven Adkins 创建并运营",
     headline: "三个区域，一个清晰的协作支点。",
     body: "Trine 是我围绕产品、市场、运营与创意合作建立的独立跨境平台。我的工作涵盖科技、B2B 运营、客户体验与品牌叙事，并正与关注国际市场的中国创始人、品牌、制造商和产品团队建立长期关系。",
-    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "快捷链接", fullMode: "完整介绍", signal: "持续建立跨市场的专业关系", cityLabel: "重点拓展地区", cities: ["深圳", "香港", "上海", "广州", "粤港澳大湾区"],
+    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "仅显示快捷链接", fullMode: "显示完整介绍", signal: "持续建立跨市场的专业关系", cityLabel: "重点拓展地区", cities: ["深圳", "香港", "上海", "广州", "粤港澳大湾区"],
   },
   profile: {
     eyebrow: "02 / 职业能力概览",

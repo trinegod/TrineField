@@ -102,9 +102,6 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
       </div>
       <div className="hero-topline">
         <span className="eyebrow"><span className="live-dot" />{copy.hero.eyebrow}</span>
-        <button className="mode-toggle" type="button" onClick={() => setCompactMode(!compactMode)} aria-pressed={compactMode}>
-          <span>{compactMode ? copy.hero.fullMode : copy.hero.linkMode}</span><span aria-hidden="true">{compactMode ? "+" : "−"}</span>
-        </button>
       </div>
       <div className="hero-grid">
         <div className="hero-copy">
@@ -137,6 +134,11 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <SocialAction social="email" label={copy.links.email} />
         <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span className="action-link__label"><Download size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.introduction}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
         <Link className="action-link action-link--prominent" href={`/resume?lang=${locale}`}><span className="action-link__label"><FileText size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.stevenResume}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
+      </div>
+      <div className="hero-view-controls">
+        <button className="mode-toggle" type="button" onClick={() => setCompactMode(!compactMode)} aria-pressed={compactMode}>
+          <span>{compactMode ? copy.hero.fullMode : copy.hero.linkMode}</span><span aria-hidden="true">{compactMode ? "+" : "−"}</span>
+        </button>
       </div>
     </section>
   );

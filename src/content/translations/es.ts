@@ -21,7 +21,7 @@ export const es: SiteCopy = {
     byline: "Creada y operada por Steven Adkins",
     headline: "Tres regiones. Un punto de operación claro.",
     body: "Trine es mi plataforma independiente para colaboraciones internacionales de producto, mercado, operaciones y creatividad. Trabajo entre tecnología, operaciones B2B, experiencia del cliente y narrativa mientras desarrollo relaciones a largo plazo con fundadores, marcas, fabricantes y equipos de producto chinos interesados en mercados internacionales.",
-    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Enlaces rápidos", fullMode: "Perfil completo", signal: "Desarrollando relaciones profesionales entre mercados", cityLabel: "Enfoque de red", cities: ["Shenzhen", "Hong Kong", "Shanghái", "Guangzhou", "Gran Área de la Bahía"],
+    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Solo enlaces rápidos", fullMode: "Mostrar perfil completo", signal: "Desarrollando relaciones profesionales entre mercados", cityLabel: "Enfoque de red", cities: ["Shenzhen", "Hong Kong", "Shanghái", "Guangzhou", "Gran Área de la Bahía"],
   },
   profile: {
     eyebrow: "02 / Perfil profesional",
