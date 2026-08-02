@@ -62,6 +62,7 @@ export interface SiteCopy {
     email: string;
     wechat: string;
     introduction: string;
+    stevenResume: string;
     book: string;
     placeholder: string;
   };

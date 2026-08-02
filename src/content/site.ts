@@ -12,6 +12,7 @@ export const siteConfig = {
   },
   wechatId: "wxid_1d9o3v999oi712",
   wechatQr: "/wechat-steven-adkins.jpg",
+  resumePdf: "/steven-adkins-master-resume.pdf",
   analytics: {
     enabled: false,
     provider: "none",

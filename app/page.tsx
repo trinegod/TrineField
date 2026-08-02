@@ -3,7 +3,7 @@
 import { useMemo, useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, Mail, MessageCircle, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, Mail, MessageCircle, type LucideIcon } from "lucide-react";
 import { LocaleProvider, useLocale } from "@/src/components/LocaleProvider";
 import { locales, translations } from "@/src/content/translations";
 import { siteConfig, type SocialKey } from "@/src/content/site";
@@ -94,11 +94,11 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-trine" aria-hidden="true">
         <span className="trine-shell trine-shell--outer" />
-        <span className="trine-shell trine-shell--inner" />
+        <span className="trine-shell trine-shell--flow" />
         <span className="trine-vertex trine-vertex--top"><b>CN</b><i /></span>
         <span className="trine-vertex trine-vertex--left"><b>US</b><i /></span>
         <span className="trine-vertex trine-vertex--right"><b>LATAM</b><i /></span>
-        <span className="trine-core"><small>TRINE / 03</small><strong>120°</strong><em>ONE OPERATING POINT</em></span>
+        <span className="trine-core"><i /><em>ONE OPERATING POINT</em></span>
       </div>
       <div className="hero-topline">
         <span className="eyebrow"><span className="live-dot" />{copy.hero.eyebrow}</span>
@@ -136,6 +136,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <SocialAction social="wechat" label={copy.links.wechat} />
         <SocialAction social="email" label={copy.links.email} />
         <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span className="action-link__label"><Download size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.introduction}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
+        <Link className="action-link action-link--prominent" href={`/resume?lang=${locale}`}><span className="action-link__label"><FileText size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.stevenResume}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export const zhCN: SiteCopy = {
     proofTitle: "先讲依据，再谈承诺",
     proofText: "该平台建立在我现有的科技、B2B、客户运营、关系管理、英语与西班牙语沟通及创意经验之上。与中国相关的新工作将如实表述为关系建设、聚焦支持与试点合作，而不是虚构的机构履历或对市场资源的保证。",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "电子邮件", wechat: "微信", introduction: "个人履历 / PDF", book: "预约交流", placeholder: "预约链接即将上线" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "电子邮件", wechat: "微信", introduction: "Trine 档案 / PDF", stevenResume: "Steven 个人履历", book: "预约交流", placeholder: "预约链接即将上线" },
   bring: {
     eyebrow: "01 / 核心价值", title: "兼具商业判断、运营思维与创意能力。", intro: "我能够在产品、客户、沟通与关系协作之间灵活切换，帮助厘清机会，并推动合适的人围绕目标建立连接。",
     capabilities: [

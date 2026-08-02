@@ -66,9 +66,13 @@ No advertising analytics or trackers are enabled. A deliberately disabled analyt
 
 The supplied QR card is stored at `public/wechat-steven-adkins.jpg` and displayed in the contact section. Test scanning it from a second phone before launch and replace only with a newly exported official QR if Steven changes WeChat accounts.
 
-## Printable introduction
+## Professional documents
 
-The `/introduction` route has complete English, Spanish, and Simplified Chinese versions. Use its **Print / Save as PDF** action and choose “Save as PDF” in the browser. The print stylesheet is formatted as a one-page professional introduction rather than a résumé.
+- `/introduction` is Trine's concise cross-border profile in English, Spanish, and Simplified Chinese.
+- `/resume` is Steven Adkins's full professional résumé in English, Spanish, and Simplified Chinese, translated from the supplied English master résumé.
+- `/steven-adkins-master-resume.pdf` preserves and opens the original two-page English PDF exactly as supplied.
+
+Both web documents include a print action so visitors can save the currently selected language as a PDF.
 
 ## Vercel deployment
 
@@ -104,6 +108,7 @@ After the final URL is live, use a reputable static QR generator, choose the exa
 
 - [ ] Add a booking link if one is wanted.
 - [ ] Scan-test the supplied WeChat QR from a second phone.
+- [ ] Review the Spanish and Simplified Chinese résumé translations with native professional readers.
 - [ ] Configure Resend and submit test forms in all three languages.
 - [ ] Ask a native Simplified Chinese speaker to review `zh-CN.ts`.
 - [ ] Confirm the 2027 availability statement.

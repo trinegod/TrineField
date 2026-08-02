@@ -36,7 +36,7 @@ export const es: SiteCopy = {
     proofTitle: "Pruebas antes que promesas",
     proofText: "La plataforma se apoya en mi experiencia actual en tecnología, B2B, operaciones de clientes, relaciones, comunicación en inglés y español y creatividad. El trabajo relacionado con China se presenta como desarrollo de relaciones, apoyo enfocado y colaboración piloto; no como una trayectoria de agencia inventada ni acceso garantizado a mercados.",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "Correo", wechat: "WeChat", introduction: "Perfil / PDF", book: "Agendar una conversación", placeholder: "Enlace de agenda próximamente" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "Correo", wechat: "WeChat", introduction: "Perfil Trine / PDF", stevenResume: "Currículum de Steven", book: "Agendar una conversación", placeholder: "Enlace de agenda próximamente" },
   bring: {
     eyebrow: "01 / Valor", title: "Pensamiento comercial con una perspectiva operativa y creativa.", intro: "Puedo moverme entre producto, cliente, comunicación y relaciones para aclarar oportunidades y conectar a las personas adecuadas.",
     capabilities: [
