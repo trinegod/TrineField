@@ -49,8 +49,8 @@ function Header() {
   const navItems = [["bring", copy.nav.bring], ["work", copy.nav.work], ["focus", copy.nav.focus], ["about", copy.nav.about]];
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label={copy.common.name}>
-        <span className="wordmark-dot" />{copy.common.name}
+      <a className="wordmark" href="#top" aria-label={copy.common.brandName}>
+        <span className="wordmark-mark" aria-hidden="true">△</span>{copy.common.brandName}
       </a>
       <nav className={`desktop-nav ${open ? "is-open" : ""}`} aria-label={copy.nav.menu}>
         {navItems.map(([href, label]) => <a key={href} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}
@@ -68,9 +68,10 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
   const { copy, locale } = useLocale();
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-orbit" aria-hidden="true">
-        <span className="orbit-ring orbit-ring--one" /><span className="orbit-ring orbit-ring--two" />
-        <span className="orbit-node orbit-node--one" /><span className="orbit-node orbit-node--two" /><span className="orbit-node orbit-node--three" />
+      <div className="hero-trine" aria-hidden="true">
+        <span className="trine-edge trine-edge--base" /><span className="trine-edge trine-edge--left" /><span className="trine-edge trine-edge--right" />
+        <span className="trine-node trine-node--top" /><span className="trine-node trine-node--left" /><span className="trine-node trine-node--right" />
+        <span className="trine-center">120°</span>
       </div>
       <div className="hero-topline">
         <span className="eyebrow"><span className="live-dot" />{copy.hero.eyebrow}</span>
@@ -80,8 +81,9 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
       </div>
       <div className="hero-grid">
         <div className="hero-copy">
-          <p className="hero-name">{copy.common.name}</p>
+          <p className="hero-name">{copy.common.brandName}</p>
           <p className="hero-descriptor">{copy.common.descriptor}</p>
+          <p className="hero-byline">{copy.hero.byline}</p>
           <h1 id="hero-title">{copy.hero.headline}</h1>
           <p className="hero-body">{copy.hero.body}</p>
           <div className="hero-actions">
@@ -92,8 +94,9 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <aside className="route-panel" aria-label={copy.common.regions}>
           <div className="route-panel__head"><span>{copy.hero.signal}</span><span>2026—27</span></div>
           <div className="route-map" aria-hidden="true">
-            <div className="route-line" /><span className="route-point point--one" /><span className="route-point point--two" /><span className="route-point point--three" />
-            <span className="route-label label--one">CN</span><span className="route-label label--two">US</span><span className="route-label label--three">LATAM</span>
+            <span className="mini-edge mini-edge--base" /><span className="mini-edge mini-edge--left" /><span className="mini-edge mini-edge--right" />
+            <span className="route-point point--one" /><span className="route-point point--two" /><span className="route-point point--three" />
+            <span className="route-label label--one">CN</span><span className="route-label label--two">US</span><span className="route-label label--three">LATAM</span><span className="route-trine">△</span>
           </div>
           <p className="region-line">{copy.common.regions}</p>
           <div className="city-list"><span>{copy.hero.cityLabel}</span><p>{copy.hero.cities.join(" · ")}</p></div>
@@ -124,6 +127,29 @@ function BringSection() {
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+function ProfileSection() {
+  const { copy } = useLocale();
+  return (
+    <section className="profile-section deep-section" id="profile" aria-labelledby="profile-title">
+      <div className="profile-intro">
+        <p className="eyebrow">{copy.profile.eyebrow}</p>
+        <h2 id="profile-title">{copy.profile.title}</h2>
+        <p>{copy.profile.intro}</p>
+      </div>
+      <div className="profile-lanes">
+        {copy.profile.lanes.map((lane, index) => (
+          <article key={lane.title}>
+            <div className="profile-lane__head"><span>{lane.code}</span><small>{String(index + 1).padStart(2, "0")}</small></div>
+            <h3>{lane.title}</h3>
+            <ul>{lane.items.map((item) => <li key={item}>{item}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+      <aside className="proof-strip"><span>△</span><div><strong>{copy.profile.proofTitle}</strong><p>{copy.profile.proofText}</p></div></aside>
     </section>
   );
 }
@@ -176,7 +202,7 @@ function AboutSection() {
   return (
     <section className="section section--about deep-section" id="about" aria-labelledby="about-title">
       <div className="about-layout">
-        <div className="about-title"><p className="eyebrow">{copy.about.eyebrow}</p><h2 id="about-title">{copy.about.title}</h2><div className="portrait-mark" aria-hidden="true"><span>S</span><i /></div></div>
+        <div className="about-title"><p className="eyebrow">{copy.about.eyebrow}</p><h2 id="about-title">{copy.about.title}</h2><div className="portrait-mark" aria-hidden="true"><span>SA</span><i /></div></div>
         <div className="about-copy">{copy.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           <div className="fact-grid">{copy.about.facts.map((fact) => <div key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong></div>)}</div>
           <div className="interests"><span>{copy.about.interestsLabel}</span><p>{copy.about.interests.join(" · ")}</p></div>
@@ -253,7 +279,7 @@ function FinalSection() {
 
 function Footer() {
   const { copy } = useLocale();
-  return <footer><div className="footer-top"><p>{copy.common.name}</p><span>{copy.footer.note}</span><a href="#top">{copy.footer.top} ↑</a></div><p className="footer-disclaimer">{copy.footer.disclaimer}</p><div className="footer-bottom"><span>{copy.footer.rights}</span><span>{copy.common.regions}</span></div></footer>;
+  return <footer><div className="footer-top"><p>{copy.common.brandName}</p><span>{copy.footer.note}</span><a href="#top">{copy.footer.top} ↑</a></div><p className="footer-disclaimer">{copy.footer.disclaimer}</p><div className="footer-bottom"><span>{copy.footer.rights}</span><span>{copy.common.regions}</span></div></footer>;
 }
 
 function Site() {
@@ -261,7 +287,7 @@ function Site() {
   const [compactMode, setCompactMode] = useState(false);
   return (
     <main id="top" data-compact={compactMode ? "true" : "false"}>
-      <Header /><Hero compactMode={compactMode} setCompactMode={setCompactMode} /><BringSection /><WorkSection /><FocusSection /><MeetSection /><AboutSection /><ContactForm /><FinalSection /><Footer />
+      <Header /><Hero compactMode={compactMode} setCompactMode={setCompactMode} /><BringSection /><ProfileSection /><WorkSection /><FocusSection /><MeetSection /><AboutSection /><ContactForm /><FinalSection /><Footer />
       <a className="mobile-contact" href="#contact">{copy.hero.primary}<span>↗</span></a>
     </main>
   );

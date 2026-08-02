@@ -18,7 +18,8 @@ export interface SiteCopy {
   htmlLang: Locale;
   meta: { title: string; description: string };
   common: {
-    name: string;
+    brandName: string;
+    ownerName: string;
     descriptor: string;
     regions: string;
     status: string;
@@ -35,6 +36,7 @@ export interface SiteCopy {
   };
   hero: {
     eyebrow: string;
+    byline: string;
     headline: string;
     body: string;
     primary: string;
@@ -45,6 +47,14 @@ export interface SiteCopy {
     signal: string;
     cityLabel: string;
     cities: string[];
+  };
+  profile: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    lanes: { code: string; title: string; items: string[] }[];
+    proofTitle: string;
+    proofText: string;
   };
   links: {
     instagram: string;

@@ -4,12 +4,13 @@ export const en: SiteCopy = {
   localeName: "English",
   htmlLang: "en",
   meta: {
-    title: "Steven — Cross-Border Product, Market & Creative Operations",
+    title: "Trine — Cross-Border Product, Market & Creative Operations | Steven Adkins",
     description:
-      "Independent cross-border collaboration across China, the United States, and Latin America—spanning products, markets, operations, and creative direction.",
+      "Trine is Steven Adkins’ independent cross-border platform connecting China, the United States, and Latin America through product, market, operations, and creative work.",
   },
   common: {
-    name: "Steven",
+    brandName: "Trine",
+    ownerName: "Steven Adkins",
     descriptor: "Cross-Border Product, Market & Creative Operations",
     regions: "China ↔ United States ↔ Latin America",
     status: "Available for China-based meetings and partnership conversations in 2027.",
@@ -27,9 +28,10 @@ export const en: SiteCopy = {
   },
   hero: {
     eyebrow: "Independent cross-border operator",
-    headline: "Clearer products. Stronger relationships. New markets.",
+    byline: "Created and operated by Steven Adkins",
+    headline: "Three regions. One clear operating point.",
     body:
-      "I work across technology, B2B operations, customer experience, product thinking, and creative direction. I am developing long-term partnerships with Chinese founders, brands, manufacturers, and product teams interested in international markets.",
+      "Trine is my independent cross-border platform for product, market, operational, and creative collaboration. I work across technology, B2B operations, customer experience, and storytelling while developing long-term relationships with Chinese founders, brands, manufacturers, and product teams interested in international markets.",
     primary: "Start a conversation",
     explore: "Explore collaboration",
     background: "View my background",
@@ -38,6 +40,19 @@ export const en: SiteCopy = {
     signal: "Building professional relationships across markets",
     cityLabel: "Network focus",
     cities: ["Shenzhen", "Hong Kong", "Shanghai", "Guangzhou", "Greater Bay Area"],
+  },
+  profile: {
+    eyebrow: "02 / Professional profile",
+    title: "A practical range built around one core strength: making opportunities clearer.",
+    intro: "My experience sits at the intersection of commercial communication, customer operations, product thinking, and creative execution. Trine turns that range into four clear working lanes.",
+    lanes: [
+      { code: "TECH / OPS", title: "Technology & Operations", items: ["Current professional work in technology", "B2B communication and transactions", "Customer operations and service coordination", "Customer experience and relationship management", "Workflow and process improvement"] },
+      { code: "PRODUCT", title: "Product & Market", items: ["Product operations and strategy", "Market research and customer insight", "U.S. and North American consumer perspective", "Product feedback and validation", "Customer-journey and service analysis"] },
+      { code: "STORY", title: "Creative & Communication", items: ["English- and Spanish-language communication", "Brand positioning and storytelling", "Writing and content strategy", "Photography and visual direction", "Social, film, and presentation concepts"] },
+      { code: "FRONTIER", title: "AI & Cross-Border Development", items: ["AI-assisted product and workflow development", "Consumer technology, hardware, and robotics", "Supplier and manufacturer relationship development", "Sourcing and product research", "Partnership and pilot-project development"] },
+    ],
+    proofTitle: "Proof before promises",
+    proofText: "The platform is grounded in my current technology, B2B, customer-operations, relationship, English- and Spanish-language, and creative experience. New China-facing work is presented as relationship building, focused support, and pilot collaboration—not as an invented agency history or guaranteed market access.",
   },
   links: {
     instagram: "Instagram",
@@ -63,7 +78,7 @@ export const en: SiteCopy = {
     ],
   },
   work: {
-    eyebrow: "02 / Collaboration",
+    eyebrow: "03 / Collaboration",
     title: "Ways we can work together.",
     intro: "Focused support for companies exploring international customers, partners, products, and narratives.",
     open: "View possibilities",
@@ -79,7 +94,7 @@ export const en: SiteCopy = {
     ],
   },
   focus: {
-    eyebrow: "03 / Focus",
+    eyebrow: "04 / Focus",
     title: "Sectors I’m interested in exploring.",
     intro: "These are areas of curiosity and potential collaboration—not claims of established expertise in every category.",
     industries: ["Chinese tea", "Apparel & textiles", "Consumer technology", "Hardware", "AI", "Robotics", "Wellness", "Longevity", "Beauty & personal care", "Creative media", "Lifestyle products", "Specialty consumer goods", "Packaging", "Manufacturing"],
@@ -90,16 +105,16 @@ export const en: SiteCopy = {
     b2cText: "Helping shape consumer products, customer experiences, content, positioning, and market concepts for U.S. and Latin American audiences.",
   },
   meet: {
-    eyebrow: "04 / Network",
+    eyebrow: "05 / Network",
     title: "Who I want to meet.",
     body: "I am especially interested in meeting people building serious products, brands, technologies, and international partnerships. I value direct communication, long-term thinking, product quality, cultural curiosity, and relationships built on mutual benefit.",
     people: ["Founders", "Manufacturers", "Export-oriented brands", "Product teams", "Technology companies", "Creative studios", "Tea producers & brands", "Apparel & fashion companies", "Hardware, AI & robotics teams", "Wellness & lifestyle brands", "Investors", "Strategic partners", "Cross-border operators"],
   },
   about: {
-    eyebrow: "05 / About",
+    eyebrow: "06 / About",
     title: "An independent operator based in Arizona, looking outward.",
     paragraphs: [
-      "My name is Steven. I currently work in technology, with professional experience spanning B2B communication, customer operations, service coordination, customer experience, and business-facing relationship management.",
+      "My name is Steven Adkins. I currently work in technology, with professional experience spanning B2B communication, customer operations, service coordination, customer experience, and business-facing relationship management.",
       "I also work creatively across writing, photography, creative direction, visual storytelling, and AI-assisted concepts. I speak English and Spanish and am building a long-term professional network connected to China.",
       "Currently developing professional relationships across Shenzhen, Hong Kong, Shanghai, Guangzhou, the Greater Bay Area, and more broadly across China when relevant.",
     ],
@@ -108,7 +123,7 @@ export const en: SiteCopy = {
     interests: ["Yoga", "Health & wellness", "Chinese medicine", "Acupuncture", "Astrology", "Photography", "Creative writing"],
   },
   form: {
-    eyebrow: "06 / Start here",
+    eyebrow: "07 / Start here",
     title: "Tell me what you’re building.",
     intro: "A few useful details are enough. I’ll review the context and respond if there is a credible fit to explore.",
     basicGroup: "About you",
@@ -157,9 +172,9 @@ export const en: SiteCopy = {
     email: "Email me",
   },
   footer: {
-    note: "Professional introduction / Independent operator / Arizona, USA",
+    note: "Trine / Steven Adkins / Independent operator / Arizona, USA",
     disclaimer: "This website is for professional introduction purposes. Nothing here constitutes legal, medical, financial, regulatory, or investment advice. Partnerships and investments require independent due diligence. Product, sourcing, import, export, and market-entry activities remain subject to applicable laws and regulations. Submitting a message does not create a formal professional relationship. Chinese translations are provided for communication accessibility and may be reviewed with language assistance.",
-    rights: "© 2026 Steven. All rights reserved.",
+    rights: "© 2026 Trine / Steven Adkins. All rights reserved.",
     top: "Back to top",
   },
   intro: {
@@ -167,7 +182,7 @@ export const en: SiteCopy = {
     subtitle: "A concise cross-border collaboration profile",
     print: "Print / Save as PDF",
     back: "Back to website",
-    snapshot: "Steven is an Arizona-based technology professional and independent cross-border operator developing relationships with Chinese founders, manufacturers, brands, and product teams interested in the United States and Latin America.",
+    snapshot: "Trine is the independent cross-border platform of Steven Adkins, an Arizona-based technology professional developing relationships with Chinese founders, manufacturers, brands, and product teams interested in the United States and Latin America.",
     valueTitle: "What I bring",
     valueItems: ["B2B communication and relationship development", "Product, customer-experience, and operational thinking", "English- and Spanish-language communication", "U.S. and Latin American audience perspective", "Brand positioning, writing, and creative direction", "AI-assisted product and workflow concepts"],
     areasTitle: "Potential collaboration",

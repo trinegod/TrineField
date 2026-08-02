@@ -1,5 +1,6 @@
 export const siteConfig = {
-  owner: "Steven",
+  brand: "Trine",
+  owner: "Steven Adkins",
   contactEmail: "",
   formEndpoint: "/api/contact",
   socialLinks: {

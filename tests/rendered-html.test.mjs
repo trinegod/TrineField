@@ -14,14 +14,16 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the complete Steven business portal", async () => {
+test("server-renders the complete Trine business portal", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Steven — Cross-Border Product, Market &amp; Creative Operations<\/title>/i);
-  assert.match(html, /Clearer products\. Stronger relationships\. New markets\./);
+  assert.match(html, /<title>Trine — Cross-Border Product, Market &amp; Creative Operations \| Steven Adkins<\/title>/i);
+  assert.match(html, /Three regions\. One clear operating point\./);
+  assert.match(html, /Created and operated by Steven Adkins/);
+  assert.match(html, /Professional profile/);
   assert.match(html, /China ↔ United States ↔ Latin America/);
   assert.match(html, /Tell me what you’re building\./);
   assert.match(html, /简体中文/);

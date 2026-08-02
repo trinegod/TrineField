@@ -18,8 +18,8 @@ function IntroductionContent() {
 
       <article className="intro-sheet">
         <div className="intro-sheet__top">
-          <div><p className="intro-kicker">{copy.intro.generated}</p><h1>{copy.common.name}</h1><p className="intro-descriptor">{copy.common.descriptor}</p></div>
-          <div className="intro-monogram" aria-hidden="true">S</div>
+          <div><p className="intro-kicker">{copy.intro.generated}</p><h1>{copy.common.brandName}</h1><p className="intro-descriptor">{copy.common.descriptor}</p><p className="intro-owner">{copy.hero.byline}</p></div>
+          <div className="intro-monogram" aria-hidden="true">△</div>
         </div>
         <div className="intro-route"><span>CN</span><i /><span>US</span><i /><span>LATAM</span></div>
         <p className="intro-regions">{copy.common.regions}</p>

@@ -1,6 +1,15 @@
-# Steven — Cross-Border Product, Market & Creative Operations
+# Trine — Cross-Border Product, Market & Creative Operations
 
-A mobile-first, three-language professional business portal for Steven. It is designed for link-in-bio use and international business introductions across China, the United States, and Latin America.
+A mobile-first, three-language professional business portal for **Trine**, the independent cross-border platform of **Steven Adkins**. It is designed for link-in-bio use and international business introductions across China, the United States, and Latin America.
+
+## Brand system
+
+Trine is the single public brand association: three regions aligned around one operating point. Steven Adkins is always identified as the person behind the platform. The content architecture follows four checks from the personal-brand knowledge system:
+
+- **Useful:** every section points to a concrete collaboration or next action.
+- **Trust-building:** current experience, collaboration interests, and future ambitions are clearly separated.
+- **Distinctive:** product, market, operations, and creative work all reinforce the same three-region positioning.
+- **Sustainable:** the core profile remains compact and can expand later through verified projects, writing, and case studies.
 
 ## Local setup
 
@@ -88,9 +97,9 @@ After the final URL is live, use a reputable static QR generator, choose the exa
 
 ## Assumptions made
 
-- The public identity is **Steven** only; no company or agency name has been invented.
+- The public platform is **Trine**, operated by **Steven Adkins**; no additional company or agency identity has been invented.
 - Social URLs, email address, WeChat QR code, booking link, and custom domain were not provided, so they remain explicit placeholders.
-- English and Spanish are Steven’s direct conversation languages. Chinese content is for accessibility and may use translation assistance.
+- English and Spanish are Steven Adkins’ direct conversation languages. Chinese content is for accessibility and may use translation assistance.
 - The site presents collaboration interests honestly and does not claim a China office, Mandarin fluency, licenses, established market-entry results, buyer networks, or guaranteed outcomes.
 - B2B collaboration is primary; B2C projects are selective.
 - The contact form sends email only after private environment variables are configured and does not persist submissions.
