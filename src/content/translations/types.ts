@@ -124,6 +124,9 @@ export interface SiteCopy {
     successText: string;
     failureTitle: string;
     failureText: string;
+    fallbackTitle: string;
+    fallbackText: string;
+    fallbackAction: string;
     required: string;
     invalidEmail: string;
     retry: string;

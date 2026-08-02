@@ -35,14 +35,15 @@ The Chinese file is intentionally standalone so a native speaker can review ever
 
 To update industries, cities, collaboration categories, service descriptions, form options, or disclaimers, edit the corresponding arrays in each translation file. Site-wide links and contact settings live in `src/content/site.ts`.
 
-## Add social and contact links
+## Social and contact links
 
-Open `src/content/site.ts` and replace the empty strings in `socialLinks`:
+Public contact information is centralized in `src/content/site.ts`:
 
-- Instagram and LinkedIn: full `https://` profile URLs
-- Email: `mailto:you@example.com`
-- WeChat: a public profile or QR landing-page URL
-- Booking: a scheduling URL
+- Instagram: `@tr1negod`
+- LinkedIn: `/in/kidpluto`
+- Email: `Stevenadkins917@gmail.com`
+- WeChat: `wxid_1d9o3v999oi712`, with the supplied QR card
+- Booking: intentionally remains unavailable until a scheduling URL is selected
 
 Empty links display as clearly disabled “coming soon” actions, so the site never ships broken or invented contact information.
 
@@ -57,19 +58,13 @@ CONTACT_FROM_EMAIL=
 NEXT_PUBLIC_SITE_URL=
 ```
 
-`CONTACT_FROM_EMAIL` must be a sender authorized by the connected Resend account. Until the first two values are configured, the translated interface gives visitors a clear delivery-not-configured message and does not store their data.
+`CONTACT_FROM_EMAIL` must be a sender authorized by the connected Resend account. `CONTACT_TO_EMAIL` is optional because the public contact address is the default destination. Until a Resend key is configured, the form preserves the visitor’s answers and gives them a prepared email draft to review and send; it does not pretend a failed message was delivered.
 
 No advertising analytics or trackers are enabled. A deliberately disabled analytics placeholder is in `src/content/site.ts`.
 
-## Add a WeChat QR code
+## WeChat QR code
 
-1. Export the official WeChat contact QR code as a high-resolution PNG.
-2. Add it to `public/wechat-qr.png`.
-3. Create a small modal or dedicated `/wechat` page that displays the image with a translated “Scan in WeChat” instruction.
-4. Change the `wechat` value in `src/content/site.ts` to `/wechat`.
-5. Test scanning from a second phone before publishing.
-
-Do not place a personal WeChat ID in source code unless it is intended to be public.
+The supplied QR card is stored at `public/wechat-steven-adkins.jpg` and displayed in the contact section. Test scanning it from a second phone before launch and replace only with a newly exported official QR if Steven changes WeChat accounts.
 
 ## Printable introduction
 
@@ -98,7 +93,7 @@ After the final URL is live, use a reputable static QR generator, choose the exa
 ## Assumptions made
 
 - The public platform is **Trine**, operated by **Steven Adkins**; no additional company or agency identity has been invented.
-- Social URLs, email address, WeChat QR code, booking link, and custom domain were not provided, so they remain explicit placeholders.
+- Instagram, LinkedIn, email, WeChat ID, and the WeChat QR card are public by request. Only the booking link and custom domain remain unresolved.
 - English and Spanish are Steven Adkins’ direct conversation languages. Chinese content is for accessibility and may use translation assistance.
 - The site presents collaboration interests honestly and does not claim a China office, Mandarin fluency, licenses, established market-entry results, buyer networks, or guaranteed outcomes.
 - B2B collaboration is primary; B2C projects are selective.
@@ -107,8 +102,8 @@ After the final URL is live, use a reputable static QR generator, choose the exa
 
 ## Pre-launch checklist
 
-- [ ] Add the real Instagram, LinkedIn, email, WeChat, and booking links.
-- [ ] Add and test the WeChat QR flow.
+- [ ] Add a booking link if one is wanted.
+- [ ] Scan-test the supplied WeChat QR from a second phone.
 - [ ] Configure Resend and submit test forms in all three languages.
 - [ ] Ask a native Simplified Chinese speaker to review `zh-CN.ts`.
 - [ ] Confirm the 2027 availability statement.

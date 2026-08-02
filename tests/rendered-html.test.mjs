@@ -26,6 +26,10 @@ test("server-renders the complete Trine business portal", async () => {
   assert.match(html, /Professional profile/);
   assert.match(html, /China ↔ United States ↔ Latin America/);
   assert.match(html, /Tell me what you’re building\./);
+  assert.match(html, /Stevenadkins917@gmail\.com/);
+  assert.match(html, /@tr1negod/);
+  assert.match(html, /wxid_1d9o3v999oi712/);
+  assert.match(html, /wechat-steven-adkins\.jpg/);
   assert.match(html, /简体中文/);
   assert.match(html, /og\.png/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);

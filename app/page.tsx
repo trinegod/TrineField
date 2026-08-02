@@ -1,15 +1,38 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, Mail, MessageCircle, type LucideIcon } from "lucide-react";
 import { LocaleProvider, useLocale } from "@/src/components/LocaleProvider";
 import { locales, translations } from "@/src/content/translations";
 import { siteConfig, type SocialKey } from "@/src/content/site";
 
-type SubmitState = "idle" | "loading" | "success" | "error";
+type SubmitState = "idle" | "loading" | "success" | "fallback" | "error";
 type FormErrors = Record<string, string>;
 
 const requiredFields = ["name", "company", "email", "collaboration", "description", "acknowledgement"];
+
+const socialIcons: Record<SocialKey, LucideIcon> = {
+  instagram: Camera,
+  linkedin: BriefcaseBusiness,
+  email: Mail,
+  wechat: MessageCircle,
+  booking: CalendarDays,
+};
+
+function TrineGlyph({ large = false }: { large?: boolean }) {
+  return (
+    <span className={`trine-glyph ${large ? "trine-glyph--large" : ""}`} aria-hidden="true">
+      <i className="trine-glyph__edge trine-glyph__edge--left" />
+      <i className="trine-glyph__edge trine-glyph__edge--right" />
+      <i className="trine-glyph__edge trine-glyph__edge--base" />
+      <b className="trine-glyph__node trine-glyph__node--top" />
+      <b className="trine-glyph__node trine-glyph__node--left" />
+      <b className="trine-glyph__node trine-glyph__node--right" />
+    </span>
+  );
+}
 
 function LanguageSelector({ compact = false }: { compact?: boolean }) {
   const { locale, setLocale } = useLocale();
@@ -32,15 +55,16 @@ function LanguageSelector({ compact = false }: { compact?: boolean }) {
 
 function SocialAction({ social, label, prominent = false }: { social: SocialKey; label: string; prominent?: boolean }) {
   const url = siteConfig.socialLinks[social];
+  const Icon = socialIcons[social];
   const className = `action-link ${prominent ? "action-link--prominent" : ""} ${!url ? "is-placeholder" : ""}`;
   if (!url) {
     return (
       <span className={className} aria-disabled="true" title={label}>
-        <span>{label}</span><small>•••</small>
+        <span className="action-link__label"><Icon size={15} strokeWidth={1.7} aria-hidden="true" />{label}</span><small>•••</small>
       </span>
     );
   }
-  return <a className={className} href={url} target={url.startsWith("http") ? "_blank" : undefined} rel="noreferrer"><span>{label}</span><span aria-hidden="true">↗</span></a>;
+  return <a className={className} href={url} target={url.startsWith("http") ? "_blank" : undefined} rel="noreferrer"><span className="action-link__label"><Icon size={15} strokeWidth={1.7} aria-hidden="true" />{label}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></a>;
 }
 
 function Header() {
@@ -50,7 +74,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label={copy.common.brandName}>
-        <span className="wordmark-mark" aria-hidden="true">△</span>{copy.common.brandName}
+        <TrineGlyph />{copy.common.brandName}
       </a>
       <nav className={`desktop-nav ${open ? "is-open" : ""}`} aria-label={copy.nav.menu}>
         {navItems.map(([href, label]) => <a key={href} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}
@@ -69,9 +93,12 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-trine" aria-hidden="true">
-        <span className="trine-edge trine-edge--base" /><span className="trine-edge trine-edge--left" /><span className="trine-edge trine-edge--right" />
-        <span className="trine-node trine-node--top" /><span className="trine-node trine-node--left" /><span className="trine-node trine-node--right" />
-        <span className="trine-center">120°</span>
+        <span className="trine-shell trine-shell--outer" />
+        <span className="trine-shell trine-shell--inner" />
+        <span className="trine-vertex trine-vertex--top"><b>CN</b><i /></span>
+        <span className="trine-vertex trine-vertex--left"><b>US</b><i /></span>
+        <span className="trine-vertex trine-vertex--right"><b>LATAM</b><i /></span>
+        <span className="trine-core"><small>TRINE / 03</small><strong>120°</strong><em>ONE OPERATING POINT</em></span>
       </div>
       <div className="hero-topline">
         <span className="eyebrow"><span className="live-dot" />{copy.hero.eyebrow}</span>
@@ -94,9 +121,9 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <aside className="route-panel" aria-label={copy.common.regions}>
           <div className="route-panel__head"><span>{copy.hero.signal}</span><span>2026—27</span></div>
           <div className="route-map" aria-hidden="true">
-            <span className="mini-edge mini-edge--base" /><span className="mini-edge mini-edge--left" /><span className="mini-edge mini-edge--right" />
+            <span className="route-triangle route-triangle--outer" /><span className="route-triangle route-triangle--inner" />
             <span className="route-point point--one" /><span className="route-point point--two" /><span className="route-point point--three" />
-            <span className="route-label label--one">CN</span><span className="route-label label--two">US</span><span className="route-label label--three">LATAM</span><span className="route-trine">△</span>
+            <span className="route-label label--one">CN</span><span className="route-label label--two">US</span><span className="route-label label--three">LATAM</span><span className="route-trine"><TrineGlyph large /></span>
           </div>
           <p className="region-line">{copy.common.regions}</p>
           <div className="city-list"><span>{copy.hero.cityLabel}</span><p>{copy.hero.cities.join(" · ")}</p></div>
@@ -108,9 +135,8 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <SocialAction social="linkedin" label={copy.links.linkedin} />
         <SocialAction social="wechat" label={copy.links.wechat} />
         <SocialAction social="email" label={copy.links.email} />
-        <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span>{copy.links.introduction}</span><span>↗</span></Link>
+        <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span className="action-link__label"><Download size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.introduction}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
       </div>
-      <p className="placeholder-note">••• {copy.links.placeholder}</p>
     </section>
   );
 }
@@ -217,6 +243,7 @@ function ContactForm() {
   const { copy, locale } = useLocale();
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
+  const [fallbackHref, setFallbackHref] = useState(siteConfig.socialLinks.email);
   const startedAt = useMemo(() => Date.now(), []);
   const fields = copy.form.fields;
 
@@ -236,13 +263,24 @@ function ContactForm() {
     if (!validate(form)) return;
     setSubmitState("loading");
     const payload = Object.fromEntries(new FormData(form));
+    const mailSubject = `Trine introduction — ${String(payload.company || "New opportunity")}`;
+    const mailBody = Object.entries(payload)
+      .filter(([key]) => key !== "acknowledgement")
+      .map(([key, value]) => `${key}: ${String(value)}`)
+      .join("\n\n");
+    const preparedEmail = `${siteConfig.socialLinks.email}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
     try {
       const response = await fetch(siteConfig.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...payload, locale, startedAt }) });
-      if (!response.ok) throw new Error("delivery");
+      if (!response.ok) {
+        setFallbackHref(preparedEmail);
+        setSubmitState("fallback");
+        return;
+      }
       form.reset();
       setSubmitState("success");
     } catch {
-      setSubmitState("error");
+      setFallbackHref(preparedEmail);
+      setSubmitState("fallback");
     }
   }
 
@@ -255,8 +293,22 @@ function ContactForm() {
 
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
-      <div className="contact-heading"><p className="eyebrow">{copy.form.eyebrow}</p><h2 id="contact-title">{copy.form.title}</h2><p>{copy.form.intro}</p></div>
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      <div className="contact-heading">
+        <p className="eyebrow">{copy.form.eyebrow}</p><h2 id="contact-title">{copy.form.title}</h2><p>{copy.form.intro}</p>
+        <div className="direct-contact" aria-label="Direct contact links">
+          <SocialAction social="email" label={siteConfig.contactEmail} />
+          <SocialAction social="instagram" label="@tr1negod" />
+          <SocialAction social="linkedin" label="/in/kidpluto" />
+        </div>
+      </div>
+      <div className="contact-stack">
+        <aside className="wechat-card" id="wechat">
+          <div className="wechat-card__copy"><span><MessageCircle size={16} strokeWidth={1.7} /> WeChat</span><h3>Steven Adkins</h3><p>{siteConfig.wechatId}</p><small>Scan to connect directly.</small></div>
+          <a className="wechat-card__qr" href={siteConfig.wechatQr} target="_blank" rel="noreferrer" aria-label="Open Steven Adkins WeChat QR code">
+            <Image src={siteConfig.wechatQr} width={888} height={1191} alt="Steven Adkins WeChat QR code" sizes="(max-width: 720px) 44vw, 220px" />
+          </a>
+        </aside>
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
         <fieldset><legend>{copy.form.basicGroup}</legend><div className="form-grid">{input("name", "text", true)}{input("company", "text", true)}{input("role")}{input("location")}{input("profile", "url")}{select("preferredLanguage", fields.preferredLanguage.options || [])}{input("email", "email", true)}{input("wechat")}{select("contactMethod", copy.form.contactOptions)}</div></fieldset>
         <fieldset><legend>{copy.form.projectGroup}</legend><div className="form-grid">{select("collaboration", copy.form.collaborationOptions, true)}{select("market", copy.form.marketOptions)}{select("stage", copy.form.stageOptions)}{input("timeline")}{input("budget")}{input("referral")}<label className="field field--wide"><span>{fields.description.label}<b aria-hidden="true"> *</b></span><textarea name="description" placeholder={fields.description.placeholder} rows={5} aria-invalid={!!errors.description} />{errors.description && <small className="field-error" role="alert">{errors.description}</small>}</label></div></fieldset>
@@ -264,8 +316,10 @@ function ContactForm() {
         <p className="privacy-copy">{copy.form.privacy}</p>
         <button className="form-submit" type="submit" disabled={submitState === "loading"}>{submitState === "loading" ? copy.form.submitting : copy.form.submit}<span>↗</span></button>
         {submitState === "success" && <div className="form-status is-success" role="status"><strong>{copy.form.successTitle}</strong><p>{copy.form.successText}</p></div>}
+        {submitState === "fallback" && <div className="form-status is-fallback" role="status"><strong>{copy.form.fallbackTitle}</strong><p>{copy.form.fallbackText}</p><a href={fallbackHref}>{copy.form.fallbackAction}<ArrowUpRight size={14} aria-hidden="true" /></a></div>}
         {submitState === "error" && <div className="form-status is-error" role="alert"><strong>{copy.form.failureTitle}</strong><p>{copy.form.failureText}</p><button type="button" onClick={() => setSubmitState("idle")}>{copy.form.retry}</button></div>}
-      </form>
+        </form>
+      </div>
     </section>
   );
 }

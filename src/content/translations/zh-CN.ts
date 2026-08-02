@@ -36,7 +36,7 @@ export const zhCN: SiteCopy = {
     proofTitle: "先讲依据，再谈承诺",
     proofText: "该平台建立在我现有的科技、B2B、客户运营、关系管理、英语与西班牙语沟通及创意经验之上。与中国相关的新工作将如实表述为关系建设、聚焦支持与试点合作，而不是虚构的机构履历或对市场资源的保证。",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "电子邮件", wechat: "微信", introduction: "下载个人介绍", book: "预约交流", placeholder: "链接即将上线" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "电子邮件", wechat: "微信", introduction: "个人履历 / PDF", book: "预约交流", placeholder: "预约链接即将上线" },
   bring: {
     eyebrow: "01 / 核心价值", title: "兼具商业判断、运营思维与创意能力。", intro: "我能够在产品、客户、沟通与关系协作之间灵活切换，帮助厘清机会，并推动合适的人围绕目标建立连接。",
     capabilities: [
@@ -83,14 +83,14 @@ export const zhCN: SiteCopy = {
     },
     collaborationOptions: ["美国市场反馈", "拉丁美洲市场", "B2B 合作", "产品或运营", "品牌或创意", "内容", "采购", "制造", "茶", "服装", "科技或硬件", "AI 或机器人", "健康或生活方式", "试点项目", "投资机会", "其他"],
     contactOptions: ["电子邮件", "微信", "Instagram", "LinkedIn"], marketOptions: ["美国", "拉丁美洲", "中国", "多个市场", "仍在探索"], stageOptions: ["概念阶段", "调研阶段", "原型阶段", "早期市场阶段", "已在运营", "拓展阶段", "其他"],
-    acknowledgement: "提交本表单不会建立正式的商业、投资、雇佣、经纪、法律、医疗或顾问关系。", privacy: "你的信息仅用于评估并回复本次沟通。本站不使用广告追踪，也不会自动将你加入邮件列表。", submit: "发送介绍", submitting: "正在发送…", successTitle: "已收到你的介绍。", successText: "谢谢。我会了解相关背景；如存在合适的合作空间，将通过你首选的方式联系。", failureTitle: "消息暂未发送成功。", failureText: "本站的私密收件地址尚未完成配置。直接联系方式上线后，请通过相应链接联系。", required: "请填写此项。", invalidEmail: "请输入有效的电子邮箱。", retry: "重试",
+    acknowledgement: "提交本表单不会建立正式的商业、投资、雇佣、经纪、法律、医疗或顾问关系。", privacy: "你的信息仅用于评估并回复本次沟通。本站不使用广告追踪，也不会自动将你加入邮件列表。", submit: "发送介绍", submitting: "正在发送…", successTitle: "已收到你的介绍。", successText: "谢谢。我会了解相关背景；如存在合适的合作空间，将通过你首选的方式联系。", failureTitle: "消息暂未发送成功。", failureText: "请通过页面上的直接联系方式联系我。", fallbackTitle: "您的介绍邮件已准备好。", fallbackText: "网站未能直接发送，但内容没有丢失。请打开已生成的邮件，检查后在您的邮件应用中发送。", fallbackAction: "打开已准备的邮件", required: "请填写此项。", invalidEmail: "请输入有效的电子邮箱。", retry: "重试",
   },
   finalCta: { eyebrow: "期待合适的交流", title: "建立合适的跨境关系，始于一次对话。", text: "如果你正在认真打造产品、品牌、技术或合作关系，欢迎介绍自己。", introduce: "介绍你的项目", wechat: "通过微信联系", instagram: "通过 Instagram 联系", email: "发送邮件" },
   footer: { note: "Trine / Steven Adkins / 独立协作者 / 美国亚利桑那州", disclaimer: "本网站仅用于职业与合作介绍，不构成法律、医疗、财务、监管或投资建议。任何合作与投资均需各方独立开展尽职调查。产品、采购、进口、出口及市场进入活动均须遵守适用法律法规。提交信息不会建立正式专业关系。中文内容仅为方便沟通，必要时可能在语言协助下进行审校。", rights: "© 2026 Trine / Steven Adkins。保留所有权利。", top: "返回顶部" },
   intro: {
-    title: "个人介绍", subtitle: "跨境合作概览", print: "打印 / 另存为 PDF", back: "返回网站", snapshot: "Trine 是 Steven Adkins 的独立跨境业务平台。Steven Adkins 常驻美国亚利桑那州，从事科技行业工作，并正与关注美国和拉丁美洲市场的中国创始人、制造商、品牌及产品团队建立合作关系。",
+    title: "个人履历", subtitle: "跨境合作概览", print: "打印 / 另存为 PDF", back: "返回网站", snapshot: "Trine 是 Steven Adkins 的独立跨境业务平台。Steven Adkins 常驻美国亚利桑那州，从事科技行业工作，并正与关注美国和拉丁美洲市场的中国创始人、制造商、品牌及产品团队建立合作关系。",
     valueTitle: "我的优势", valueItems: ["B2B 沟通与关系拓展", "产品、客户体验与运营思维", "英语与西班牙语沟通", "美国及拉丁美洲受众视角", "品牌定位、文案与创意方向", "AI 辅助产品与流程概念"],
     areasTitle: "潜在合作方向", areas: ["国际市场反馈", "B2B 合作关系拓展", "产品与客户体验", "品牌、内容与创意方向", "采购探索与产品联合开发", "聚焦型试点与审慎投资评估"],
-    marketsTitle: "市场连接", markets: "中国 ↔ 美国 ↔ 拉丁美洲。目前正拓展深圳、香港、上海、广州及粤港澳大湾区的专业关系。", languagesTitle: "沟通语言", languages: "英语和西班牙语。中文材料旨在方便阅读，必要时可借助翻译支持。", sectorsTitle: "关注领域", contactTitle: "开始交流", contactText: "直接联系方式正在完善中。你可以在主网站提交合作表单，介绍可信的项目或机会。", generated: "职业介绍 · 2026",
+    marketsTitle: "市场连接", markets: "中国 ↔ 美国 ↔ 拉丁美洲。目前正拓展深圳、香港、上海、广州及粤港澳大湾区的专业关系。", languagesTitle: "沟通语言", languages: "英语和西班牙语。中文材料旨在方便阅读，必要时可借助翻译支持。", sectorsTitle: "关注领域", contactTitle: "开始交流", contactText: "邮箱：Stevenadkins917@gmail.com · Instagram：@tr1negod · LinkedIn：/in/kidpluto · 微信：wxid_1d9o3v999oi712", generated: "职业介绍 · 2026",
   },
 };

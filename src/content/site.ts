@@ -1,15 +1,17 @@
 export const siteConfig = {
   brand: "Trine",
   owner: "Steven Adkins",
-  contactEmail: "",
+  contactEmail: "Stevenadkins917@gmail.com",
   formEndpoint: "/api/contact",
   socialLinks: {
-    instagram: "",
-    linkedin: "",
-    email: "",
-    wechat: "",
+    instagram: "https://www.instagram.com/tr1negod/",
+    linkedin: "https://www.linkedin.com/in/kidpluto",
+    email: "mailto:Stevenadkins917@gmail.com",
+    wechat: "#wechat",
     booking: "",
   },
+  wechatId: "wxid_1d9o3v999oi712",
+  wechatQr: "/wechat-steven-adkins.jpg",
   analytics: {
     enabled: false,
     provider: "none",

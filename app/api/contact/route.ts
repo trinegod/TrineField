@@ -35,10 +35,10 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const destination = process.env.CONTACT_TO_EMAIL;
+  const destination = process.env.CONTACT_TO_EMAIL || "Stevenadkins917@gmail.com";
   const sender = process.env.CONTACT_FROM_EMAIL || "Website Introduction <onboarding@resend.dev>";
 
-  if (!apiKey || !destination) {
+  if (!apiKey) {
     return NextResponse.json({ ok: false, code: "not_configured" }, { status: 503 });
   }
 
