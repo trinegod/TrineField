@@ -60,7 +60,7 @@ export const en: SiteCopy = {
     email: "Email",
     wechat: "WeChat",
     introduction: "Trine profile / PDF",
-    stevenResume: "Steven résumé",
+    stevenResume: "Steven’s résumé",
     book: "Book a conversation",
     placeholder: "Booking link coming soon",
   },

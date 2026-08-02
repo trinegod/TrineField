@@ -30,7 +30,7 @@ test("server-renders the complete Trine business portal", async () => {
   assert.match(html, /@tr1negod/);
   assert.match(html, /wxid_1d9o3v999oi712/);
   assert.match(html, /wechat-steven-adkins\.jpg/);
-  assert.match(html, /Steven résumé/);
+  assert.match(html, /Steven’s résumé/);
   assert.match(html, /ONE OPERATING POINT/);
   assert.doesNotMatch(html, /120°/);
   assert.match(html, /简体中文/);
