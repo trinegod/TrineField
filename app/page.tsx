@@ -94,7 +94,6 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-trine" aria-hidden="true">
         <span className="trine-shell trine-shell--outer" />
-        <span className="trine-shell trine-shell--flow" />
         <span className="trine-vertex trine-vertex--top"><b>CN</b><i /></span>
         <span className="trine-vertex trine-vertex--left"><b>US</b><i /></span>
         <span className="trine-vertex trine-vertex--right"><b>LATAM</b><i /></span>
@@ -118,7 +117,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <aside className="route-panel" aria-label={copy.common.regions}>
           <div className="route-panel__head"><span>{copy.hero.signal}</span><span>2026—27</span></div>
           <div className="route-map" aria-hidden="true">
-            <span className="route-triangle route-triangle--outer" /><span className="route-triangle route-triangle--inner" />
+            <span className="route-triangle route-triangle--outer" />
             <span className="route-point point--one" /><span className="route-point point--two" /><span className="route-point point--three" />
             <span className="route-label label--one">CN</span><span className="route-label label--two">US</span><span className="route-label label--three">LATAM</span><span className="route-trine"><TrineGlyph large /></span>
           </div>

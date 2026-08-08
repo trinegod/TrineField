@@ -26,9 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     applicationName: "Trine",
     keywords: ["cross-border business", "China", "United States", "Latin America", "B2B", "product operations", "creative direction"],
-    icons: { icon: "/icon.png", shortcut: "/icon.png", apple: "/icon.png" },
-    openGraph: { title, description, type: "website", locale: "en_US", siteName: "Trine", images: [{ url: new URL("/og.png", base).toString(), width: 1536, height: 1024, alt: "Trine — Cross-Border Product, Market & Creative Operations by Steven Adkins" }] },
-    twitter: { card: "summary_large_image", title, description, images: [new URL("/og.png", base).toString()] },
+    icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }], shortcut: "/favicon.svg", apple: "/icon.png" },
+    openGraph: { title, description, type: "website", locale: "en_US", siteName: "Trine", images: [{ url: new URL("/og-trinefield-v6.png", base).toString(), width: 1536, height: 1024, alt: "Trine — Three regions. One clear operating point." }] },
+    twitter: { card: "summary_large_image", title, description, images: [new URL("/og-trinefield-v6.png", base).toString()] },
     alternates: { canonical: base },
     robots: { index: true, follow: true },
   };

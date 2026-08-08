@@ -61,7 +61,6 @@ main { min-height: 100vh; overflow: clip; }
 .trine-shell { position: absolute; clip-path: polygon(50% 0, 100% 88%, 0 88%); background: linear-gradient(128deg, rgba(242,243,236,.1), var(--signal) 48%, rgba(242,243,236,.18)); }
 .trine-shell::after { content: ""; position: absolute; inset: 4px; background: var(--ink); clip-path: polygon(50% 0, 100% 88%, 0 88%); }
 .trine-shell--outer { inset: 7% 5% 8%; }
-.trine-shell--flow { inset: 20% 18% 22%; opacity: .34; transform: rotate(180deg); }
 .trine-vertex { position: absolute; z-index: 3; display: flex; align-items: center; gap: 9px; color: rgba(242,243,236,.5); font: .58rem var(--font-geist-mono), monospace; letter-spacing: .12em; }
 .trine-vertex b { font-weight: 500; }
 .trine-vertex i { width: 9px; height: 9px; background: var(--signal); box-shadow: 0 0 0 7px rgba(200,243,106,.07), 0 0 28px rgba(200,243,106,.38); transform: rotate(45deg); }
@@ -96,7 +95,7 @@ html[lang="zh-CN"] .hero-body { line-height: 1.85; }
 .route-map::before, .route-map::after { content: ""; position: absolute; inset: 33% 0 auto; height: 1px; background: rgba(244,239,228,.06); box-shadow: 0 55px rgba(244,239,228,.06); }
 .route-triangle { position: absolute; z-index: 1; clip-path: polygon(50% 0, 100% 88%, 0 88%); background: var(--signal); }
 .route-triangle::after { content: ""; position: absolute; inset: 2px; clip-path: polygon(50% 0, 100% 88%, 0 88%); background: #0c0e0b; }
-.route-triangle--outer { inset: 16% 21% 16%; }.route-triangle--inner { inset: 30% 35% 29%; opacity: .32; transform: rotate(180deg); }
+.route-triangle--outer { inset: 16% 21% 16%; }
 .route-point { position: absolute; z-index: 2; width: 9px; height: 9px; border: 2px solid var(--signal); background: var(--ink); transform: rotate(45deg); }
 .point--one { left: calc(50% - 4px); top: 16%; }.point--two { left: calc(21% - 4px); bottom: calc(22% - 4px); }.point--three { right: calc(21% - 4px); bottom: calc(22% - 4px); }
 .route-label { position: absolute; font: .6rem var(--font-geist-mono), monospace; color: var(--paper); }
@@ -318,11 +317,26 @@ main[data-compact="true"] .hero { min-height: calc(100svh - 80px); }
   .language-selector--compact button { padding: 7px 6px; font-size: .58rem; }
   .hero { min-height: auto; padding: calc(var(--header-h) + 28px) 16px 34px; }
   .hero::before { background-size: 100% 100%, 100% 90px; }
-  .hero-trine { display: none; }
+  .hero-trine {
+    display: block;
+    width: 148px;
+    right: 14px;
+    top: calc(var(--header-h) + 22px);
+    opacity: .78;
+    filter: drop-shadow(0 18px 42px rgba(0,0,0,.46));
+  }
+  .hero-trine::before { inset: 5%; }
+  .hero-trine .trine-shell::after { inset: 3px; }
+  .hero-trine .trine-vertex { font-size: .42rem; gap: 5px; }
+  .hero-trine .trine-vertex i { width: 6px; height: 6px; box-shadow: 0 0 0 4px rgba(200,243,106,.06), 0 0 18px rgba(200,243,106,.32); }
+  .hero-trine .trine-core { width: 124px; gap: 15px; }
+  .hero-trine .trine-core i { width: 8px; height: 8px; box-shadow: 0 0 0 5px rgba(200,243,106,.05), 0 0 20px rgba(200,243,106,.36); }
+  .hero-trine .trine-core em { font-size: .38rem; letter-spacing: .14em; }
   .hero-topline { margin-bottom: 42px; }
   .hero-topline .eyebrow { max-width: 52%; line-height: 1.5; }
   .mode-toggle { min-width: 0; padding: 10px 12px; }
   .hero-grid { gap: 40px; }
+  .hero-copy { padding-top: 50px; }
   .hero h1 { font-size: clamp(3.05rem, 15vw, 5rem); line-height: .91; }
   .hero-body { margin-top: 25px; font-size: .9rem; line-height: 1.62; }
   .hero-actions { flex-direction: column; }

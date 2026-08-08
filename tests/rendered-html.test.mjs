@@ -34,7 +34,7 @@ test("server-renders the complete Trine business portal", async () => {
   assert.match(html, /ONE OPERATING POINT/);
   assert.doesNotMatch(html, /120°/);
   assert.match(html, /简体中文/);
-  assert.match(html, /og\.png/);
+  assert.match(html, /og-trinefield-v6\.png/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
