@@ -62,12 +62,13 @@ test("server-renders Steven Adkins's translated resume route", async () => {
 });
 
 test("keeps all three language dictionaries complete and editable", async () => {
-  const [english, spanish, chinese, resume, page, packageJson, resumePdf] = await Promise.all([
+  const [english, spanish, chinese, resume, page, cinematicStage, packageJson, resumePdf] = await Promise.all([
     readFile(new URL("../src/content/translations/en.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/translations/es.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/translations/zh-CN.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/resume.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../src/components/CinematicStage.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../public/steven-adkins-master-resume.pdf", import.meta.url)),
   ]);
@@ -79,6 +80,12 @@ test("keeps all three language dictionaries complete and editable", async () => 
   assert.match(resume, /Currículum profesional|Currículum maestro/);
   assert.match(resume, /职业概述/);
   assert.match(page, /copy\.form\.fields/);
+  assert.match(cinematicStage, /trine-environment\.webp/);
+  assert.match(cinematicStage, /prefers-reduced-motion/);
+  assert.match(cinematicStage, /ScrollTrigger/);
   assert.equal(resumePdf.subarray(0, 4).toString(), "%PDF");
+  assert.match(packageJson, /@react-three\/fiber/);
+  assert.match(packageJson, /"three"/);
+  assert.match(packageJson, /"gsap"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

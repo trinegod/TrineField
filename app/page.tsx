@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type FormEvent } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, Mail, MessageCircle, type LucideIcon } from "lucide-react";
 import { LocaleProvider, useLocale } from "@/src/components/LocaleProvider";
@@ -12,6 +13,11 @@ type SubmitState = "idle" | "loading" | "success" | "fallback" | "error";
 type FormErrors = Record<string, string>;
 
 const requiredFields = ["name", "company", "email", "collaboration", "description", "acknowledgement"];
+
+const CinematicStage = dynamic(() => import("@/src/components/CinematicStage"), {
+  ssr: false,
+  loading: () => <div className="cinematic-stage cinematic-stage--loading" aria-hidden="true"><div className="cinematic-stage__fallback" /></div>,
+});
 
 const socialIcons: Record<SocialKey, LucideIcon> = {
   instagram: Camera,
@@ -343,6 +349,7 @@ function Site() {
   const [compactMode, setCompactMode] = useState(false);
   return (
     <main id="top" data-compact={compactMode ? "true" : "false"}>
+      <CinematicStage />
       <Header /><Hero compactMode={compactMode} setCompactMode={setCompactMode} /><BringSection /><ProfileSection /><WorkSection /><FocusSection /><MeetSection /><AboutSection /><ContactForm /><FinalSection /><Footer />
       <a className="mobile-contact" href="#contact">{copy.hero.primary}<span>↗</span></a>
     </main>
