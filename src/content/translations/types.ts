@@ -45,6 +45,8 @@ export interface SiteCopy {
     linkMode: string;
     fullMode: string;
     signal: string;
+    diagramLabels: [string, string, string];
+    coreLabel: string;
     cityLabel: string;
     cities: string[];
   };

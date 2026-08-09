@@ -14,27 +14,28 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the complete Trine business portal", async () => {
+test("server-renders the complete Trine professional portfolio", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Trine — Cross-Border Product, Market &amp; Creative Operations \| Steven Adkins<\/title>/i);
-  assert.match(html, /Three regions\. One clear operating point\./);
+  assert.match(html, /<title>Trine — Product, AI, Operations, UX &amp; Creative Work \| Steven Adkins<\/title>/i);
+  assert.match(html, /Ideas into useful experiences\./);
   assert.match(html, /Created and operated by Steven Adkins/);
   assert.match(html, /Professional profile/);
-  assert.match(html, /China ↔ United States ↔ Latin America/);
+  assert.match(html, /Product ↔ Experience ↔ Execution/);
   assert.match(html, /Tell me what you’re building\./);
   assert.match(html, /Stevenadkins917@gmail\.com/);
   assert.match(html, /@tr1negod/);
   assert.match(html, /wxid_1d9o3v999oi712/);
   assert.match(html, /wechat-steven-adkins\.jpg/);
   assert.match(html, /Steven’s résumé/);
-  assert.match(html, /ONE OPERATING POINT/);
+  assert.match(html, /ONE CLEAR POINT/);
   assert.doesNotMatch(html, /120°/);
   assert.match(html, /简体中文/);
-  assert.match(html, /og-trinefield-v6\.png/);
+  assert.match(html, /og-trinefield-v7\.png/);
+  assert.doesNotMatch(html, /China-based|Shenzhen|Latin America|cross-border|Three regions/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
@@ -42,10 +43,10 @@ test("server-renders the printable introduction route", async () => {
   const response = await render("/introduction");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /A concise cross-border collaboration profile/);
+  assert.match(html, /Product, AI, operations, CX, UX\/content &amp; creative work/);
   assert.match(html, /Print \/ Save as PDF/);
   assert.match(html, /Potential collaboration/);
-  assert.match(html, /Sectors of interest/);
+  assert.match(html, /Specialties/);
 });
 
 test("server-renders Steven Adkins's translated resume route", async () => {
@@ -71,10 +72,10 @@ test("keeps all three language dictionaries complete and editable", async () => 
     readFile(new URL("../public/steven-adkins-master-resume.pdf", import.meta.url)),
   ]);
 
-  assert.match(english, /Cross-Border Product, Market & Creative Operations/);
-  assert.match(spanish, /Operaciones Internacionales de Producto, Mercado y Creatividad/);
-  assert.match(chinese, /跨境产品、市场与创意运营/);
-  assert.match(chinese, /提交本表单不会建立正式的商业/);
+  assert.match(english, /Product, AI, Operations, UX & Creative Work/);
+  assert.match(spanish, /Producto, IA, Operaciones, UX y Creatividad/);
+  assert.match(chinese, /产品、AI、运营、UX 与创意工作/);
+  assert.match(chinese, /提交本表单不会建立正式的雇佣/);
   assert.match(resume, /Currículum profesional|Currículum maestro/);
   assert.match(resume, /职业概述/);
   assert.match(page, /copy\.form\.fields/);

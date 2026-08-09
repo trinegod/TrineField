@@ -21,7 +21,7 @@ function IntroductionContent() {
           <div><p className="intro-kicker">{copy.intro.generated}</p><h1>{copy.common.brandName}</h1><p className="intro-descriptor">{copy.common.descriptor}</p><p className="intro-owner">{copy.hero.byline}</p></div>
           <div className="intro-monogram" aria-hidden="true">△</div>
         </div>
-        <div className="intro-route"><span>CN</span><i /><span>US</span><i /><span>LATAM</span></div>
+        <div className="intro-route"><span>{copy.hero.diagramLabels[0]}</span><i /><span>{copy.hero.diagramLabels[1]}</span><i /><span>{copy.hero.diagramLabels[2]}</span></div>
         <p className="intro-regions">{copy.common.regions}</p>
         <h2>{copy.intro.title}</h2>
         <p className="intro-subtitle">{copy.intro.subtitle}</p>
