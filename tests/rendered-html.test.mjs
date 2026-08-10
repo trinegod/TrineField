@@ -30,6 +30,8 @@ test("server-renders the complete Trine professional portfolio", async () => {
   assert.match(html, /@tr1negod/);
   assert.match(html, /wxid_1d9o3v999oi712/);
   assert.match(html, /wechat-steven-adkins\.jpg/);
+  assert.match(html, /https:\/\/github\.com\/trinegod/);
+  assert.match(html, /https:\/\/wa\.me\/19162875897/);
   assert.match(html, /Steven’s résumé/);
   assert.match(html, /ONE CLEAR POINT/);
   assert.doesNotMatch(html, /120°/);

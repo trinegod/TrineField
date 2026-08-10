@@ -61,6 +61,8 @@ export interface SiteCopy {
   links: {
     instagram: string;
     linkedin: string;
+    github: string;
+    whatsapp: string;
     email: string;
     wechat: string;
     introduction: string;
@@ -141,6 +143,8 @@ export interface SiteCopy {
     introduce: string;
     wechat: string;
     instagram: string;
+    github: string;
+    whatsapp: string;
     email: string;
   };
   footer: {

@@ -59,6 +59,8 @@ export const en: SiteCopy = {
   links: {
     instagram: "Instagram",
     linkedin: "LinkedIn",
+    github: "GitHub",
+    whatsapp: "WhatsApp",
     email: "Email",
     wechat: "WeChat",
     introduction: "Trine profile / PDF",
@@ -150,7 +152,7 @@ export const en: SiteCopy = {
       referral: { label: "How did you find me?", placeholder: "Instagram, LinkedIn, referral…" },
     },
     collaborationOptions: ["Product strategy", "Product operations", "Customer experience", "UX/UI or content", "AI or workflow design", "B2B partnership", "Brand or creative direction", "Research or validation", "Other"],
-    contactOptions: ["Email", "WeChat", "Instagram", "LinkedIn"],
+    contactOptions: ["Email", "WhatsApp", "WeChat", "Instagram", "LinkedIn"],
     marketOptions: ["Product & UX", "AI & workflows", "CX & operations", "B2B partnerships", "Brand & content", "Still exploring"],
     stageOptions: ["Idea", "Research", "Prototype", "Early market", "Operating business", "Expansion", "Other"],
     acknowledgement: "Submitting this form does not create a formal employment, legal, medical, financial, or advisory relationship.",
@@ -175,6 +177,8 @@ export const en: SiteCopy = {
     introduce: "Introduce yourself",
     wechat: "Connect on WeChat",
     instagram: "Connect on Instagram",
+    github: "View my GitHub",
+    whatsapp: "Message me on WhatsApp",
     email: "Email me",
   },
   footer: {
@@ -199,7 +203,7 @@ export const en: SiteCopy = {
     languages: "English and Spanish. This portfolio is also available in Simplified Chinese for accessibility, with translation assistance when needed.",
     sectorsTitle: "Specialties",
     contactTitle: "Start a conversation",
-    contactText: "Email: Stevenadkins917@gmail.com · Instagram: @tr1negod · LinkedIn: /in/kidpluto · WeChat: wxid_1d9o3v999oi712",
+    contactText: "Email: Stevenadkins917@gmail.com · WhatsApp: +1 916-287-5897 · Instagram: @tr1negod · LinkedIn: /in/kidpluto · GitHub: @trinegod · WeChat: wxid_1d9o3v999oi712",
     generated: "Professional introduction · 2026",
   },
 };

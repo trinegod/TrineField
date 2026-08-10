@@ -4,7 +4,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, Mail, MessageCircle, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, GitFork, Mail, MessageCircle, Phone, type LucideIcon } from "lucide-react";
 import { LocaleProvider, useLocale } from "@/src/components/LocaleProvider";
 import { locales, translations } from "@/src/content/translations";
 import { siteConfig, type SocialKey } from "@/src/content/site";
@@ -22,6 +22,8 @@ const CinematicStage = dynamic(() => import("@/src/components/CinematicStage"), 
 const socialIcons: Record<SocialKey, LucideIcon> = {
   instagram: Camera,
   linkedin: BriefcaseBusiness,
+  github: GitFork,
+  whatsapp: Phone,
   email: Mail,
   wechat: MessageCircle,
   booking: CalendarDays,
@@ -135,6 +137,8 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
       <div className="quick-actions" aria-label={copy.hero.linkMode}>
         <SocialAction social="instagram" label={copy.links.instagram} />
         <SocialAction social="linkedin" label={copy.links.linkedin} />
+        <SocialAction social="github" label={copy.links.github} />
+        <SocialAction social="whatsapp" label={copy.links.whatsapp} />
         <SocialAction social="wechat" label={copy.links.wechat} />
         <SocialAction social="email" label={copy.links.email} />
         <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span className="action-link__label"><Download size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.introduction}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>
@@ -251,7 +255,7 @@ function ContactForm() {
   const { copy, locale } = useLocale();
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
-  const [fallbackHref, setFallbackHref] = useState(siteConfig.socialLinks.email);
+  const [fallbackHref, setFallbackHref] = useState<string>(siteConfig.socialLinks.email);
   const startedAt = useMemo(() => Date.now(), []);
   const fields = copy.form.fields;
 
@@ -305,8 +309,10 @@ function ContactForm() {
         <p className="eyebrow">{copy.form.eyebrow}</p><h2 id="contact-title">{copy.form.title}</h2><p>{copy.form.intro}</p>
         <div className="direct-contact" aria-label="Direct contact links">
           <SocialAction social="email" label={siteConfig.contactEmail} />
+          <SocialAction social="whatsapp" label={siteConfig.whatsappNumber} />
           <SocialAction social="instagram" label="@tr1negod" />
           <SocialAction social="linkedin" label="/in/kidpluto" />
+          <SocialAction social="github" label="@trinegod" />
         </div>
       </div>
       <div className="contact-stack">
@@ -335,7 +341,7 @@ function ContactForm() {
 function FinalSection() {
   const { copy } = useLocale();
   return (
-    <section className="final-cta" aria-labelledby="final-title"><div><p className="eyebrow">{copy.finalCta.eyebrow}</p><h2 id="final-title">{copy.finalCta.title}</h2><p>{copy.finalCta.text}</p></div><div className="final-actions"><a className="button button--light" href="#contact">{copy.finalCta.introduce}<span>↗</span></a><SocialAction social="wechat" label={copy.finalCta.wechat} /><SocialAction social="instagram" label={copy.finalCta.instagram} /><SocialAction social="email" label={copy.finalCta.email} /></div></section>
+    <section className="final-cta" aria-labelledby="final-title"><div><p className="eyebrow">{copy.finalCta.eyebrow}</p><h2 id="final-title">{copy.finalCta.title}</h2><p>{copy.finalCta.text}</p></div><div className="final-actions"><a className="button button--light" href="#contact">{copy.finalCta.introduce}<span>↗</span></a><SocialAction social="whatsapp" label={copy.finalCta.whatsapp} /><SocialAction social="github" label={copy.finalCta.github} /><SocialAction social="wechat" label={copy.finalCta.wechat} /><SocialAction social="instagram" label={copy.finalCta.instagram} /><SocialAction social="email" label={copy.finalCta.email} /></div></section>
   );
 }
 

@@ -36,7 +36,7 @@ export const zhCN: SiteCopy = {
     proofTitle: "先讲依据，再谈承诺",
     proofText: "这里展示的工作建立在我对科技、B2B 沟通、客户运营、产品思维、UX/UI、内容与创意执行的实际经验之上。我会清晰说明工作范围，区分已交付经验与探索性概念，并聚焦有用的成果。",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", email: "电子邮件", wechat: "微信", introduction: "Trine 档案 / PDF", stevenResume: "Steven 个人履历", book: "预约交流", placeholder: "预约链接即将上线" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", github: "GitHub", whatsapp: "WhatsApp", email: "电子邮件", wechat: "微信", introduction: "Trine 档案 / PDF", stevenResume: "Steven 个人履历", book: "预约交流", placeholder: "预约链接即将上线" },
   bring: {
     eyebrow: "01 / 核心价值", title: "兼具商业判断、运营思维与创意能力。", intro: "我能够在产品、客户、沟通与关系协作之间灵活切换，帮助厘清机会，并推动合适的人围绕目标建立连接。",
     capabilities: [
@@ -82,15 +82,15 @@ export const zhCN: SiteCopy = {
       name: { label: "姓名", placeholder: "你的姓名" }, company: { label: "公司或项目", placeholder: "公司、品牌或项目暂定名称" }, role: { label: "职务", placeholder: "创始人、产品负责人、设计师等" }, location: { label: "所在地", placeholder: "城市、州或国家" }, profile: { label: "网站或社交主页", placeholder: "https://" }, preferredLanguage: { label: "首选语言", placeholder: "请选择语言", options: ["English", "Español", "简体中文"] }, email: { label: "电子邮箱", placeholder: "you@company.com" }, wechat: { label: "微信号", placeholder: "选填" }, contactMethod: { label: "首选联系方式", placeholder: "请选择联系方式" }, collaboration: { label: "合作类型", placeholder: "请选择最接近的一项" }, description: { label: "简要说明", placeholder: "你正在做什么？希望在哪些方面获得支持？" }, market: { label: "主要需求", placeholder: "请选择方向" }, stage: { label: "项目当前阶段", placeholder: "请选择阶段" }, timeline: { label: "大致时间安排", placeholder: "近期、本季度、仍在探索等" }, budget: { label: "大致预算或项目规模", placeholder: "可选填预算范围或项目范围" }, referral: { label: "你是如何找到我的？", placeholder: "Instagram、LinkedIn、朋友介绍等" },
     },
     collaborationOptions: ["产品策略", "产品运营", "客户体验", "UX/UI 或内容", "AI 或工作流设计", "B2B 合作", "品牌或创意方向", "调研或验证", "其他"],
-    contactOptions: ["电子邮件", "微信", "Instagram", "LinkedIn"], marketOptions: ["产品与 UX", "AI 与工作流", "CX 与运营", "B2B 合作", "品牌与内容", "仍在探索"], stageOptions: ["概念阶段", "调研阶段", "原型阶段", "早期市场阶段", "已在运营", "拓展阶段", "其他"],
+    contactOptions: ["电子邮件", "WhatsApp", "微信", "Instagram", "LinkedIn"], marketOptions: ["产品与 UX", "AI 与工作流", "CX 与运营", "B2B 合作", "品牌与内容", "仍在探索"], stageOptions: ["概念阶段", "调研阶段", "原型阶段", "早期市场阶段", "已在运营", "拓展阶段", "其他"],
     acknowledgement: "提交本表单不会建立正式的雇佣、法律、医疗、财务或顾问关系。", privacy: "你的信息仅用于评估并回复本次沟通。本站不使用广告追踪，也不会自动将你加入邮件列表。", submit: "发送介绍", submitting: "正在发送…", successTitle: "已收到你的介绍。", successText: "谢谢。我会了解相关背景；如存在合适的合作空间，将通过你首选的方式联系。", failureTitle: "消息暂未发送成功。", failureText: "请通过页面上的直接联系方式联系我。", fallbackTitle: "您的介绍邮件已准备好。", fallbackText: "网站未能直接发送，但内容没有丢失。请打开已生成的邮件，检查后在您的邮件应用中发送。", fallbackAction: "打开已准备的邮件", required: "请填写此项。", invalidEmail: "请输入有效的电子邮箱。", retry: "重试",
   },
-  finalCta: { eyebrow: "期待合适的交流", title: "合适的合作，始于一次清晰的对话。", text: "如果你正在认真打造产品、品牌、技术或合作关系，欢迎介绍自己。", introduce: "介绍你的项目", wechat: "通过微信联系", instagram: "通过 Instagram 联系", email: "发送邮件" },
+  finalCta: { eyebrow: "期待合适的交流", title: "合适的合作，始于一次清晰的对话。", text: "如果你正在认真打造产品、品牌、技术或合作关系，欢迎介绍自己。", introduce: "介绍你的项目", wechat: "通过微信联系", instagram: "通过 Instagram 联系", github: "查看我的 GitHub", whatsapp: "通过 WhatsApp 联系", email: "发送邮件" },
   footer: { note: "Trine / Steven Adkins / 独立建设者 / 美国亚利桑那州", disclaimer: "本网站仅用于职业介绍。每个项目的范围、职责、时间安排和条款将另行约定。提交信息不会建立正式的专业、雇佣、法律、医疗、财务或顾问关系。翻译内容仅为方便沟通，必要时可能在语言协助下进行审校。", rights: "© 2026 Trine / Steven Adkins。保留所有权利。", top: "返回顶部" },
   intro: {
     title: "个人履历", subtitle: "产品、AI、运营、CX、UX/内容与创意工作", print: "打印 / 另存为 PDF", back: "返回网站", snapshot: "Trine 是 Steven Adkins 的专业作品集，集中展示他在产品打造、AI 辅助工作流、客户运营、UX/UI、B2B 关系、内容与创意执行方面的经验。",
     valueTitle: "我的优势", valueItems: ["B2B 沟通与关系拓展", "产品、客户体验与运营思维", "英语与西班牙语沟通", "UX/UI 设计与产品原型", "品牌定位、文案与创意方向", "AI 辅助产品与流程概念"],
     areasTitle: "潜在合作方向", areas: ["产品与市场洞察", "B2B 合作关系拓展", "产品与客户体验", "品牌、UX、内容与创意方向", "AI 与工作流设计", "产品构建与原型设计"],
-    marketsTitle: "工作能力范围", markets: "产品策略 ↔ 客户体验 ↔ 务实执行。", languagesTitle: "沟通语言", languages: "英语和西班牙语。本作品集也提供简体中文版本以便阅读，必要时可借助翻译支持。", sectorsTitle: "专业领域", contactTitle: "开始交流", contactText: "邮箱：Stevenadkins917@gmail.com · Instagram：@tr1negod · LinkedIn：/in/kidpluto · 微信：wxid_1d9o3v999oi712", generated: "职业介绍 · 2026",
+    marketsTitle: "工作能力范围", markets: "产品策略 ↔ 客户体验 ↔ 务实执行。", languagesTitle: "沟通语言", languages: "英语和西班牙语。本作品集也提供简体中文版本以便阅读，必要时可借助翻译支持。", sectorsTitle: "专业领域", contactTitle: "开始交流", contactText: "邮箱：Stevenadkins917@gmail.com · WhatsApp：+1 916-287-5897 · Instagram：@tr1negod · LinkedIn：/in/kidpluto · GitHub：@trinegod · 微信：wxid_1d9o3v999oi712", generated: "职业介绍 · 2026",
   },
 };
