@@ -28,8 +28,23 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# local secrets and credentials
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.npmrc
+.netrc
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+credentials*.json
+service-account*.json
+secrets*.json
 
 # vercel
 .vercel
@@ -40,3 +55,6 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/.codex/
+/.agents/
+*.tar.gz
