@@ -313,7 +313,7 @@ function ContactForm() {
         <aside className="wechat-card" id="wechat">
           <div className="wechat-card__copy"><span><MessageCircle size={16} strokeWidth={1.7} /> WeChat</span><h3>Steven Adkins</h3><p>{siteConfig.wechatId}</p><small>Scan to connect directly.</small></div>
           <a className="wechat-card__qr" href={siteConfig.wechatQr} target="_blank" rel="noreferrer" aria-label="Open Steven Adkins WeChat QR code">
-            <Image src={siteConfig.wechatQr} width={888} height={1191} alt="Steven Adkins WeChat QR code" sizes="(max-width: 720px) 44vw, 220px" />
+            <Image src={siteConfig.wechatQr} width={888} height={1191} alt="Steven Adkins WeChat QR code" sizes="(max-width: 720px) 44vw, 220px" unoptimized />
           </a>
         </aside>
         <form className="contact-form" onSubmit={handleSubmit} noValidate>

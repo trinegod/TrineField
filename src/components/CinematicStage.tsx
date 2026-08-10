@@ -1,7 +1,17 @@
 "use client";
 
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
+import {
+  Component,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MutableRefObject,
+  type ReactNode,
+} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
@@ -12,10 +22,52 @@ type MotionState = {
   pointerY: number;
 };
 
+type RendererMode = "checking" | "webgl" | "fallback";
+
+type WebGLBoundaryProps = {
+  children: ReactNode;
+  onFailure: () => void;
+};
+
+class WebGLBoundary extends Component<WebGLBoundaryProps, { failed: boolean }> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  componentDidCatch() {
+    this.props.onFailure();
+  }
+
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
+
+function canCreateWebGL2Context() {
+  try {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("webgl2", {
+      alpha: true,
+      antialias: true,
+      failIfMajorPerformanceCaveat: false,
+      powerPreference: "default",
+    });
+
+    if (!context) return false;
+
+    context.getExtension("WEBGL_lose_context")?.loseContext();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 const SCENE_POSITIONS = {
-  x: [2.2, -1.85, 1.65, -1.55, 1.8, -1.25, 0.15],
-  y: [0.25, -0.05, 0.18, -0.28, 0.18, -0.08, 0],
-  scale: [1, 0.78, 1.08, 0.84, 1.04, 0.76, 0.92],
+  x: [1.05, 0.72, 1.08, 0.58, 0.94, 0.46, 0.32],
+  y: [0.2, 0.02, 0.14, -0.16, 0.12, -0.04, 0],
+  scale: [0.94, 0.86, 0.98, 0.88, 0.96, 0.84, 0.9],
 };
 
 function useReducedMotion() {
@@ -40,23 +92,37 @@ function interpolateKeyframes(values: number[], progress: number) {
 
 function EnvironmentRelief({ motion }: { motion: MutableRefObject<MotionState> }) {
   const mesh = useRef<THREE.Mesh>(null);
-  const [colorMap, alphaMap, depthMap] = useLoader(THREE.TextureLoader, [
+  const [loadedColorMap, loadedAlphaMap, loadedDepthMap] = useLoader(THREE.TextureLoader, [
     "/cinematic/trine-environment.webp",
     "/cinematic/trine-alpha.webp",
     "/cinematic/trine-depth.webp",
   ]);
 
+  const [colorMap, alphaMap, depthMap] = useMemo(() => {
+    const color = loadedColorMap.clone();
+    const alpha = loadedAlphaMap.clone();
+    const depth = loadedDepthMap.clone();
+
+    color.colorSpace = THREE.SRGBColorSpace;
+    color.anisotropy = 2;
+    alpha.colorSpace = THREE.NoColorSpace;
+    depth.colorSpace = THREE.NoColorSpace;
+
+    return [color, alpha, depth];
+  }, [loadedAlphaMap, loadedColorMap, loadedDepthMap]);
+
   useEffect(() => {
-    colorMap.colorSpace = THREE.SRGBColorSpace;
-    colorMap.anisotropy = 4;
-    alphaMap.colorSpace = THREE.NoColorSpace;
-    depthMap.colorSpace = THREE.NoColorSpace;
+    return () => {
+      colorMap.dispose();
+      alphaMap.dispose();
+      depthMap.dispose();
+    };
   }, [alphaMap, colorMap, depthMap]);
 
   useFrame((_, delta) => {
     if (!mesh.current) return;
     const ease = 1 - Math.exp(-delta * 2.4);
-    mesh.current.position.x = THREE.MathUtils.lerp(mesh.current.position.x, 0.7 + motion.current.pointerX * 0.16, ease);
+    mesh.current.position.x = THREE.MathUtils.lerp(mesh.current.position.x, 0.05 + motion.current.pointerX * 0.11, ease);
     mesh.current.position.y = THREE.MathUtils.lerp(mesh.current.position.y, motion.current.pointerY * 0.1 - motion.current.progress * 0.18, ease);
     mesh.current.rotation.y = THREE.MathUtils.lerp(mesh.current.rotation.y, motion.current.pointerX * 0.025, ease);
     mesh.current.rotation.x = THREE.MathUtils.lerp(mesh.current.rotation.x, -motion.current.pointerY * 0.018, ease);
@@ -64,7 +130,7 @@ function EnvironmentRelief({ motion }: { motion: MutableRefObject<MotionState> }
 
   return (
     <mesh ref={mesh} position={[0.7, 0, -4.6]}>
-      <planeGeometry args={[12, 6.75, 128, 72]} />
+      <planeGeometry args={[12, 6.75, 72, 40]} />
       <meshStandardMaterial
         map={colorMap}
         alphaMap={alphaMap}
@@ -102,8 +168,8 @@ function Beam({ length, position, rotation }: { length: number; position: [numbe
 function ParticleField({ motion }: { motion: MutableRefObject<MotionState> }) {
   const points = useRef<THREE.Points>(null);
   const positions = useMemo(() => {
-    const values = new Float32Array(180 * 3);
-    for (let index = 0; index < 180; index += 1) {
+    const values = new Float32Array(120 * 3);
+    for (let index = 0; index < 120; index += 1) {
       const angle = index * 2.3999632297;
       const radius = 1.4 + ((index * 37) % 100) / 21;
       values[index * 3] = Math.cos(angle) * radius;
@@ -148,7 +214,8 @@ function TrineSculpture({ motion, reduced }: { motion: MutableRefObject<MotionSt
     group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, targetX + motion.current.pointerX * 0.12, ease);
     group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, targetY - motion.current.pointerY * 0.08, ease);
     group.current.scale.setScalar(THREE.MathUtils.lerp(group.current.scale.x, targetScale, ease));
-    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, (reduced ? -0.12 : progress * Math.PI * 2.35) + motion.current.pointerX * 0.16, ease);
+    const faceOnYaw = reduced ? -0.1 : -0.1 + Math.sin(progress * Math.PI * 2) * 0.22;
+    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, faceOnYaw + motion.current.pointerX * 0.08, ease);
     group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, -0.08 + Math.sin(progress * Math.PI * 4) * 0.16 - motion.current.pointerY * 0.08, ease);
     group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, Math.sin(progress * Math.PI * 3) * 0.1, ease);
 
@@ -157,12 +224,12 @@ function TrineSculpture({ motion, reduced }: { motion: MutableRefObject<MotionSt
     core.current.rotation.x = time * 0.32;
     const pulse = reduced ? 1 : 1 + Math.sin(time * 1.7) * 0.08;
     core.current.scale.setScalar(pulse);
-    glow.current.scale.setScalar(1.7 + Math.sin(time * 1.3) * 0.11);
-    limeLight.current.intensity = 7 + Math.sin(time * 1.5) * 1.1 + progress * 3;
+    glow.current.scale.setScalar(1.4 + Math.sin(time * 1.3) * 0.07);
+    limeLight.current.intensity = 8 + Math.sin(time * 1.5) * 0.8 + progress * 2;
   });
 
   return (
-    <group ref={group} position={[2.2, 0.25, 0]} scale={0.74}>
+    <group ref={group} position={[1.05, 0.2, 0]} scale={0.7}>
       <Beam length={3.1} position={[0, -1.05, 0]} rotation={0} />
       <Beam length={3.11} position={[-0.775, 0.3, 0]} rotation={1.049} />
       <Beam length={3.11} position={[0.775, 0.3, 0]} rotation={-1.049} />
@@ -172,28 +239,31 @@ function TrineSculpture({ motion, reduced }: { motion: MutableRefObject<MotionSt
         <meshBasicMaterial color="#c8f36a" transparent opacity={0.18} side={THREE.DoubleSide} depthWrite={false} />
       </mesh>
 
-      <mesh ref={core} position={[0, 0.02, 0.22]} castShadow>
-        <octahedronGeometry args={[0.18, 1]} />
+      <mesh ref={core} position={[0, 0.02, 0.3]} castShadow>
+        <octahedronGeometry args={[0.25, 0]} />
         <meshPhysicalMaterial
           color="#c8f36a"
           emissive="#c8f36a"
-          emissiveIntensity={3.2}
-          metalness={0.18}
-          roughness={0.16}
+          emissiveIntensity={1.65}
+          metalness={0.52}
+          roughness={0.12}
           clearcoat={1}
+          clearcoatRoughness={0.08}
+          flatShading
         />
       </mesh>
-      <mesh ref={glow} position={[0, 0.02, 0.19]}>
-        <octahedronGeometry args={[0.23, 1]} />
+      <mesh ref={glow} position={[0, 0.02, 0.26]}>
+        <octahedronGeometry args={[0.28, 0]} />
         <meshBasicMaterial
           color="#c8f36a"
           transparent
-          opacity={0.085}
+          opacity={0.055}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
+          wireframe
         />
       </mesh>
-      <pointLight ref={limeLight} position={[0, 0.05, 1]} color="#c8f36a" intensity={7} distance={7} decay={2} />
+      <pointLight ref={limeLight} position={[0, 0.05, 1]} color="#c8f36a" intensity={8} distance={7} decay={2} />
     </group>
   );
 }
@@ -218,6 +288,40 @@ function Scene({ motion, reduced }: { motion: MutableRefObject<MotionState>; red
 export default function CinematicStage() {
   const reduced = useReducedMotion();
   const motion = useRef<MotionState>({ progress: 0, pointerX: 0, pointerY: 0 });
+  const [rendererMode, setRendererMode] = useState<RendererMode>("checking");
+  const [canvasReady, setCanvasReady] = useState(false);
+
+  const handleRendererFailure = useCallback(() => {
+    setCanvasReady(false);
+    setRendererMode("fallback");
+  }, []);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 900px), (pointer: coarse)");
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const chooseRenderer = () => {
+      if (mobileQuery.matches || reducedMotionQuery.matches) {
+        setRendererMode("fallback");
+        return;
+      }
+
+      setRendererMode(canCreateWebGL2Context() ? "webgl" : "fallback");
+    };
+
+    chooseRenderer();
+    mobileQuery.addEventListener("change", chooseRenderer);
+    reducedMotionQuery.addEventListener("change", chooseRenderer);
+
+    return () => {
+      mobileQuery.removeEventListener("change", chooseRenderer);
+      reducedMotionQuery.removeEventListener("change", chooseRenderer);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.cinematicRenderer = canvasReady ? "webgl" : rendererMode;
+  }, [canvasReady, rendererMode]);
 
   useEffect(() => {
     document.documentElement.dataset.cinematic = "ready";
@@ -226,6 +330,8 @@ export default function CinematicStage() {
     const syncProgress = (progress: number) => {
       motion.current.progress = progress;
       document.documentElement.style.setProperty("--cinematic-progress", progress.toFixed(4));
+      document.documentElement.style.setProperty("--cinematic-drift-y", `${(-18 - progress * 42).toFixed(2)}px`);
+      document.documentElement.style.setProperty("--cinematic-orbit", `${(-3 + progress * 13).toFixed(2)}deg`);
     };
 
     const trigger = ScrollTrigger.create({
@@ -238,6 +344,8 @@ export default function CinematicStage() {
     const onPointerMove = (event: PointerEvent) => {
       motion.current.pointerX = (event.clientX / window.innerWidth) * 2 - 1;
       motion.current.pointerY = (event.clientY / window.innerHeight) * 2 - 1;
+      document.documentElement.style.setProperty("--cinematic-pointer-x", `${(motion.current.pointerX * 16).toFixed(2)}px`);
+      document.documentElement.style.setProperty("--cinematic-pointer-y", `${(motion.current.pointerY * 10).toFixed(2)}px`);
     };
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     syncProgress(trigger.progress);
@@ -246,30 +354,57 @@ export default function CinematicStage() {
       trigger.kill();
       window.removeEventListener("pointermove", onPointerMove);
       delete document.documentElement.dataset.cinematic;
+      delete document.documentElement.dataset.cinematicRenderer;
       document.documentElement.style.removeProperty("--cinematic-progress");
+      document.documentElement.style.removeProperty("--cinematic-drift-y");
+      document.documentElement.style.removeProperty("--cinematic-orbit");
+      document.documentElement.style.removeProperty("--cinematic-pointer-x");
+      document.documentElement.style.removeProperty("--cinematic-pointer-y");
     };
   }, []);
 
+  const activeRenderer = canvasReady ? "webgl" : rendererMode;
+
   return (
-    <div className="cinematic-stage" aria-hidden="true">
-      <div className="cinematic-stage__fallback" />
-      <Canvas
-        className="cinematic-stage__canvas"
-        dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 8], fov: 34, near: 0.1, far: 40 }}
-        frameloop={reduced ? "demand" : "always"}
-        gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-        onCreated={({ gl }) => {
-          gl.setClearColor("#080908", 0);
-          gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 0.88;
-          gl.outputColorSpace = THREE.SRGBColorSpace;
-        }}
-      >
-        <Scene motion={motion} reduced={reduced} />
-      </Canvas>
+    <div className="cinematic-stage" data-renderer={activeRenderer} aria-hidden="true">
+      <div className="cinematic-stage__fallback">
+        <span className="cinematic-stage__depth cinematic-stage__depth--rear" />
+        <span className="cinematic-stage__depth cinematic-stage__depth--front" />
+        <span className="cinematic-stage__constellation">
+          <i className="cinematic-stage__beam cinematic-stage__beam--left" />
+          <i className="cinematic-stage__beam cinematic-stage__beam--right" />
+          <i className="cinematic-stage__beam cinematic-stage__beam--base" />
+          <i className="cinematic-stage__core"><b /></i>
+        </span>
+        <span className="cinematic-stage__flare" />
+        <span className="cinematic-stage__scan" />
+      </div>
+      {rendererMode === "webgl" && (
+        <WebGLBoundary onFailure={handleRendererFailure}>
+          <Canvas
+            className="cinematic-stage__canvas"
+            dpr={1}
+            camera={{ position: [0, 0, 8], fov: 34, near: 0.1, far: 40 }}
+            frameloop={reduced ? "demand" : "always"}
+            gl={{ alpha: true, antialias: true, failIfMajorPerformanceCaveat: false, powerPreference: "default", precision: "mediump" }}
+            onCreated={({ gl }) => {
+              gl.setClearColor("#080908", 0);
+              gl.toneMapping = THREE.ACESFilmicToneMapping;
+              gl.toneMappingExposure = 0.88;
+              gl.outputColorSpace = THREE.SRGBColorSpace;
+              gl.domElement.addEventListener("webglcontextlost", (event) => {
+                event.preventDefault();
+                handleRendererFailure();
+              }, { once: true });
+              setCanvasReady(true);
+            }}
+          >
+            <Scene motion={motion} reduced={reduced} />
+          </Canvas>
+        </WebGLBoundary>
+      )}
       <div className="cinematic-hud">
-        <span>TRINE / DEPTH SYSTEM</span>
+        <span>{canvasReady ? "TRINE / LIVE DEPTH" : "TRINE / ADAPTIVE DEPTH"}</span>
         <i><b /></i>
         <span>01—07</span>
       </div>

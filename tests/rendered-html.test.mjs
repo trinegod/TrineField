@@ -80,9 +80,16 @@ test("keeps all three language dictionaries complete and editable", async () => 
   assert.match(resume, /Currículum profesional|Currículum maestro/);
   assert.match(resume, /职业概述/);
   assert.match(page, /copy\.form\.fields/);
+  assert.match(page, /unoptimized/);
   assert.match(cinematicStage, /trine-environment\.webp/);
   assert.match(cinematicStage, /prefers-reduced-motion/);
   assert.match(cinematicStage, /ScrollTrigger/);
+  assert.match(cinematicStage, /getContext\("webgl2"/);
+  assert.match(cinematicStage, /WebGLBoundary/);
+  assert.match(cinematicStage, /rendererMode === "webgl"/);
+  assert.match(cinematicStage, /octahedronGeometry args=\{\[0\.25, 0\]\}/);
+  assert.match(cinematicStage, /dpr=\{1\}/);
+  assert.match(cinematicStage, /faceOnYaw/);
   assert.equal(resumePdf.subarray(0, 4).toString(), "%PDF");
   assert.match(packageJson, /@react-three\/fiber/);
   assert.match(packageJson, /"three"/);
