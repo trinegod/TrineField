@@ -36,7 +36,7 @@ export const es: SiteCopy = {
     proofTitle: "Pruebas antes que promesas",
     proofText: "El trabajo presentado aquí se apoya en experiencia práctica en tecnología, comunicación B2B, operaciones de clientes, pensamiento de producto, UX/UI, contenido y ejecución creativa. Describo el trabajo con claridad, separo la experiencia entregada de los conceptos exploratorios y me enfoco en resultados útiles.",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", github: "GitHub", whatsapp: "WhatsApp", email: "Correo", wechat: "WeChat", introduction: "Perfil Trine / PDF", stevenResume: "Currículum de Steven", book: "Agendar una conversación", placeholder: "Enlace de agenda próximamente" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", github: "GitHub", whatsapp: "WhatsApp", nodeine: "NODEINE — Proyecto en vivo", email: "Correo", wechat: "WeChat", introduction: "Perfil Trine / PDF", stevenResume: "Currículum de Steven", book: "Agendar una conversación", placeholder: "Enlace de agenda próximamente" },
   bring: {
     eyebrow: "01 / Valor", title: "Pensamiento comercial con una perspectiva operativa y creativa.", intro: "Puedo moverme entre producto, cliente, comunicación y relaciones para aclarar oportunidades y conectar a las personas adecuadas.",
     capabilities: [

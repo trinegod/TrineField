@@ -61,6 +61,7 @@ export const en: SiteCopy = {
     linkedin: "LinkedIn",
     github: "GitHub",
     whatsapp: "WhatsApp",
+    nodeine: "NODEINE — Live Project",
     email: "Email",
     wechat: "WeChat",
     introduction: "Trine profile / PDF",

@@ -8,6 +8,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/kidpluto",
     github: "https://github.com/trinegod",
     whatsapp: "https://wa.me/19162875897",
+    nodeine: "https://nodeine.vercel.app/",
     email: "mailto:Stevenadkins917@gmail.com",
     wechat: "#wechat",
     booking: "",

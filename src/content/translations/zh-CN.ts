@@ -36,7 +36,7 @@ export const zhCN: SiteCopy = {
     proofTitle: "先讲依据，再谈承诺",
     proofText: "这里展示的工作建立在我对科技、B2B 沟通、客户运营、产品思维、UX/UI、内容与创意执行的实际经验之上。我会清晰说明工作范围，区分已交付经验与探索性概念，并聚焦有用的成果。",
   },
-  links: { instagram: "Instagram", linkedin: "LinkedIn", github: "GitHub", whatsapp: "WhatsApp", email: "电子邮件", wechat: "微信", introduction: "Trine 档案 / PDF", stevenResume: "Steven 个人履历", book: "预约交流", placeholder: "预约链接即将上线" },
+  links: { instagram: "Instagram", linkedin: "LinkedIn", github: "GitHub", whatsapp: "WhatsApp", nodeine: "NODEINE — 在线项目", email: "电子邮件", wechat: "微信", introduction: "Trine 档案 / PDF", stevenResume: "Steven 个人履历", book: "预约交流", placeholder: "预约链接即将上线" },
   bring: {
     eyebrow: "01 / 核心价值", title: "兼具商业判断、运营思维与创意能力。", intro: "我能够在产品、客户、沟通与关系协作之间灵活切换，帮助厘清机会，并推动合适的人围绕目标建立连接。",
     capabilities: [

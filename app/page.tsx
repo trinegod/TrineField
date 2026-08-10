@@ -4,7 +4,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, GitFork, Mail, MessageCircle, Phone, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CalendarDays, Camera, Download, FileText, GitFork, Mail, MessageCircle, Phone, Sparkles, type LucideIcon } from "lucide-react";
 import { LocaleProvider, useLocale } from "@/src/components/LocaleProvider";
 import { locales, translations } from "@/src/content/translations";
 import { siteConfig, type SocialKey } from "@/src/content/site";
@@ -24,6 +24,7 @@ const socialIcons: Record<SocialKey, LucideIcon> = {
   linkedin: BriefcaseBusiness,
   github: GitFork,
   whatsapp: Phone,
+  nodeine: Sparkles,
   email: Mail,
   wechat: MessageCircle,
   booking: CalendarDays,
@@ -139,6 +140,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <SocialAction social="linkedin" label={copy.links.linkedin} />
         <SocialAction social="github" label={copy.links.github} />
         <SocialAction social="whatsapp" label={copy.links.whatsapp} />
+        <SocialAction social="nodeine" label={copy.links.nodeine} />
         <SocialAction social="wechat" label={copy.links.wechat} />
         <SocialAction social="email" label={copy.links.email} />
         <Link className="action-link action-link--prominent" href={`/introduction?lang=${locale}`}><span className="action-link__label"><Download size={15} strokeWidth={1.7} aria-hidden="true" />{copy.links.introduction}</span><ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" /></Link>

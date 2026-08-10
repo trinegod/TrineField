@@ -63,6 +63,7 @@ export interface SiteCopy {
     linkedin: string;
     github: string;
     whatsapp: string;
+    nodeine: string;
     email: string;
     wechat: string;
     introduction: string;
