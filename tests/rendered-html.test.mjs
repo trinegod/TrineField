@@ -68,11 +68,12 @@ test("server-renders Steven Adkins's translated resume route", async () => {
   assert.match(html, /Open original PDF/);
 });
 
-test("keeps all three language dictionaries complete and editable", async () => {
-  const [english, spanish, chinese, resume, page, cinematicStage, packageJson, resumePdf] = await Promise.all([
+test("keeps all four language dictionaries complete and editable", async () => {
+  const [english, spanish, chinese, japanese, resume, page, cinematicStage, packageJson, resumePdf] = await Promise.all([
     readFile(new URL("../src/content/translations/en.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/translations/es.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/translations/zh-CN.ts", import.meta.url), "utf8"),
+    readFile(new URL("../src/content/translations/ja.ts", import.meta.url), "utf8"),
     readFile(new URL("../src/content/resume.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../src/components/CinematicStage.tsx", import.meta.url), "utf8"),
@@ -84,6 +85,8 @@ test("keeps all three language dictionaries complete and editable", async () => 
   assert.match(spanish, /Producto, IA, Operaciones, UX y Creatividad/);
   assert.match(chinese, /产品、AI、运营、UX 与创意工作/);
   assert.match(chinese, /提交本表单不会建立正式的雇佣/);
+  assert.match(japanese, /アイデアを、役立つ体験へ/);
+  assert.match(japanese, /日本語/);
   assert.match(resume, /Currículum profesional|Currículum maestro/);
   assert.match(resume, /职业概述/);
   assert.match(page, /copy\.form\.fields/);

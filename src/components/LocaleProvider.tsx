@@ -31,6 +31,7 @@ function resolveLocale(): Locale {
 
   const browser = window.navigator.language.toLowerCase();
   if (browser.startsWith("zh")) return "zh-CN";
+  if (browser.startsWith("ja")) return "ja";
   if (browser.startsWith("es")) return "es";
   return "en";
 }

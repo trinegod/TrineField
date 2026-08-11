@@ -15,7 +15,7 @@ export const en: SiteCopy = {
     regions: "Product ↔ Experience ↔ Execution",
     status: "Open to Product, Operations, AI, UX, Content, and creative collaborations.",
     languageNote:
-      "This site is available in English, Spanish, and Simplified Chinese. Direct conversations may be conducted in English or Spanish, with translation assistance when needed.",
+      "This site is available in English, Spanish, Simplified Chinese, and Japanese. Direct conversations may be conducted in English or Spanish, with translation assistance when needed.",
   },
   nav: {
     bring: "What I bring",
@@ -141,7 +141,7 @@ export const en: SiteCopy = {
       role: { label: "Professional role", placeholder: "Founder, product lead, designer…" },
       location: { label: "Location", placeholder: "City, state, or country" },
       profile: { label: "Website or social profile", placeholder: "https://" },
-      preferredLanguage: { label: "Preferred language", placeholder: "Choose a language", options: ["English", "Español", "简体中文"] },
+      preferredLanguage: { label: "Preferred language", placeholder: "Choose a language", options: ["English", "Español", "简体中文", "日本語"] },
       email: { label: "Email", placeholder: "you@company.com" },
       wechat: { label: "WeChat ID", placeholder: "Optional" },
       contactMethod: { label: "Preferred contact method", placeholder: "Choose a method" },
@@ -202,7 +202,7 @@ export const en: SiteCopy = {
     marketsTitle: "Working range",
     markets: "Product strategy ↔ customer experience ↔ practical execution.",
     languagesTitle: "Languages",
-    languages: "English and Spanish. This portfolio is also available in Simplified Chinese for accessibility, with translation assistance when needed.",
+    languages: "English and Spanish. This portfolio is also available in Simplified Chinese and Japanese for accessibility, with translation assistance when needed.",
     sectorsTitle: "Specialties",
     contactTitle: "Start a conversation",
     contactText: "Email: Stevenadkins917@gmail.com · WhatsApp: +1 916-287-5897 · Instagram: @tr1negod · LinkedIn: /in/kidpluto · GitHub: @trinegod · WeChat: wxid_1d9o3v999oi712",

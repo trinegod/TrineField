@@ -13,7 +13,7 @@ export const zhCN: SiteCopy = {
     descriptor: "产品、AI、运营、UX 与创意工作",
     regions: "产品 ↔ 体验 ↔ 执行",
     status: "欢迎探讨产品、运营、AI、UX、内容与创意合作。",
-    languageNote: "本站提供英语、西班牙语和简体中文版本。直接交流可使用英语或西班牙语，必要时可借助翻译支持。",
+    languageNote: "本站提供英语、西班牙语、简体中文和日语版本。直接交流可使用英语或西班牙语，必要时可借助翻译支持。",
   },
   nav: { bring: "我的优势", work: "合作方式", focus: "关注领域", about: "关于我", contact: "联系", menu: "打开菜单", close: "关闭菜单" },
   hero: {
@@ -80,7 +80,7 @@ export const zhCN: SiteCopy = {
   form: {
     eyebrow: "07 / 从这里开始", title: "告诉我你正在做什么。", intro: "提供几项关键信息即可。我会认真了解项目背景；如果双方存在可信、合适的合作空间，我会进一步联系。", basicGroup: "关于你", projectGroup: "关于合作机会",
     fields: {
-      name: { label: "姓名", placeholder: "你的姓名" }, company: { label: "公司或项目", placeholder: "公司、品牌或项目暂定名称" }, role: { label: "职务", placeholder: "创始人、产品负责人、设计师等" }, location: { label: "所在地", placeholder: "城市、州或国家" }, profile: { label: "网站或社交主页", placeholder: "https://" }, preferredLanguage: { label: "首选语言", placeholder: "请选择语言", options: ["English", "Español", "简体中文"] }, email: { label: "电子邮箱", placeholder: "you@company.com" }, wechat: { label: "微信号", placeholder: "选填" }, contactMethod: { label: "首选联系方式", placeholder: "请选择联系方式" }, collaboration: { label: "合作类型", placeholder: "请选择最接近的一项" }, description: { label: "简要说明", placeholder: "你正在做什么？希望在哪些方面获得支持？" }, market: { label: "主要需求", placeholder: "请选择方向" }, stage: { label: "项目当前阶段", placeholder: "请选择阶段" }, timeline: { label: "大致时间安排", placeholder: "近期、本季度、仍在探索等" }, budget: { label: "大致预算或项目规模", placeholder: "可选填预算范围或项目范围" }, referral: { label: "你是如何找到我的？", placeholder: "Instagram、LinkedIn、朋友介绍等" },
+      name: { label: "姓名", placeholder: "你的姓名" }, company: { label: "公司或项目", placeholder: "公司、品牌或项目暂定名称" }, role: { label: "职务", placeholder: "创始人、产品负责人、设计师等" }, location: { label: "所在地", placeholder: "城市、州或国家" }, profile: { label: "网站或社交主页", placeholder: "https://" }, preferredLanguage: { label: "首选语言", placeholder: "请选择语言", options: ["English", "Español", "简体中文", "日本語"] }, email: { label: "电子邮箱", placeholder: "you@company.com" }, wechat: { label: "微信号", placeholder: "选填" }, contactMethod: { label: "首选联系方式", placeholder: "请选择联系方式" }, collaboration: { label: "合作类型", placeholder: "请选择最接近的一项" }, description: { label: "简要说明", placeholder: "你正在做什么？希望在哪些方面获得支持？" }, market: { label: "主要需求", placeholder: "请选择方向" }, stage: { label: "项目当前阶段", placeholder: "请选择阶段" }, timeline: { label: "大致时间安排", placeholder: "近期、本季度、仍在探索等" }, budget: { label: "大致预算或项目规模", placeholder: "可选填预算范围或项目范围" }, referral: { label: "你是如何找到我的？", placeholder: "Instagram、LinkedIn、朋友介绍等" },
     },
     collaborationOptions: ["产品策略", "产品运营", "客户体验", "UX/UI 或内容", "AI 或工作流设计", "B2B 合作", "品牌或创意方向", "调研或验证", "其他"],
     contactOptions: ["电子邮件", "WhatsApp", "微信", "Instagram", "LinkedIn"], marketOptions: ["产品与 UX", "AI 与工作流", "CX 与运营", "B2B 合作", "品牌与内容", "仍在探索"], stageOptions: ["概念阶段", "调研阶段", "原型阶段", "早期市场阶段", "已在运营", "拓展阶段", "其他"],
@@ -92,6 +92,6 @@ export const zhCN: SiteCopy = {
     title: "个人履历", subtitle: "产品、AI、运营、CX、UX/内容与创意工作", print: "打印 / 另存为 PDF", back: "返回网站", snapshot: "Trine 是 Steven Adkins 的专业作品集，集中展示他在产品打造、AI 辅助工作流、客户运营、UX/UI、B2B 关系、内容与创意执行方面的经验。",
     valueTitle: "我的优势", valueItems: ["B2B 沟通与关系拓展", "产品、客户体验与运营思维", "英语与西班牙语沟通", "UX/UI 设计与产品原型", "品牌定位、文案与创意方向", "AI 辅助产品与流程概念"],
     areasTitle: "潜在合作方向", areas: ["产品与市场洞察", "B2B 合作关系拓展", "产品与客户体验", "品牌、UX、内容与创意方向", "AI 与工作流设计", "产品构建与原型设计"],
-    marketsTitle: "工作能力范围", markets: "产品策略 ↔ 客户体验 ↔ 务实执行。", languagesTitle: "沟通语言", languages: "英语和西班牙语。本作品集也提供简体中文版本以便阅读，必要时可借助翻译支持。", sectorsTitle: "专业领域", contactTitle: "开始交流", contactText: "邮箱：Stevenadkins917@gmail.com · WhatsApp：+1 916-287-5897 · Instagram：@tr1negod · LinkedIn：/in/kidpluto · GitHub：@trinegod · 微信：wxid_1d9o3v999oi712", generated: "职业介绍 · 2026",
+    marketsTitle: "工作能力范围", markets: "产品策略 ↔ 客户体验 ↔ 务实执行。", languagesTitle: "沟通语言", languages: "英语和西班牙语。本作品集也提供简体中文和日语版本以便阅读，必要时可借助翻译支持。", sectorsTitle: "专业领域", contactTitle: "开始交流", contactText: "邮箱：Stevenadkins917@gmail.com · WhatsApp：+1 916-287-5897 · Instagram：@tr1negod · LinkedIn：/in/kidpluto · GitHub：@trinegod · 微信：wxid_1d9o3v999oi712", generated: "职业介绍 · 2026",
   },
 };

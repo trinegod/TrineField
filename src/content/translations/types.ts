@@ -1,4 +1,4 @@
-export type Locale = "en" | "es" | "zh-CN";
+export type Locale = "en" | "es" | "zh-CN" | "ja";
 
 export type Capability = { title: string; text: string; code: string };
 export type Collaboration = {
