@@ -127,8 +127,7 @@ function ProcessRail() {
   return (
     <aside className="process-rail" aria-label={copy.common.regions}>
       <div className="process-rail__head">
-        <span>{copy.hero.signal}</span>
-        <span>{copy.hero.processHint}</span>
+        <span>{copy.common.brandName} / {copy.hero.cityLabel}</span>
       </div>
       <div className="process-track" onPointerMove={selectFromPointer} onPointerDown={beginSwipe} onPointerUp={finishSwipe}>
         <span className="process-runner" style={{ "--process-index": activeIndex } as React.CSSProperties} aria-hidden="true"><i /></span>
@@ -147,7 +146,7 @@ function ProcessRail() {
           </button>
         ))}
       </div>
-      <div className="process-rail__range"><span>{copy.hero.cityLabel}</span><p>{copy.hero.cities.join(" · ")}</p></div>
+      <div className="process-rail__range"><p>{copy.hero.cities.join(" · ")}</p></div>
     </aside>
   );
 }
@@ -164,7 +163,11 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <span className="trine-core"><i /><em>{copy.hero.coreLabel}</em></span>
       </div>
       <div className="hero-topline">
-        <span className="eyebrow"><span className="live-dot" /><span className="eyebrow-copy">{copy.hero.eyebrow}</span></span>
+        <span className="eyebrow">
+          <span className="live-dot" />
+          <span className="eyebrow-copy">{copy.hero.eyebrow}</span>
+          <span className="eyebrow-mobile"><span>{copy.hero.eyebrowParts[0]}</span><b>{copy.hero.eyebrowParts[1]}</b><span>{copy.hero.eyebrowParts[2]}</span></span>
+        </span>
       </div>
       <div className="hero-grid">
         <div className="hero-copy">

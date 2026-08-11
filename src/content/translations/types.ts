@@ -36,6 +36,7 @@ export interface SiteCopy {
   };
   hero: {
     eyebrow: string;
+    eyebrowParts: [string, string, string];
     byline: string;
     headline: string;
     body: string;
@@ -45,7 +46,6 @@ export interface SiteCopy {
     linkMode: string;
     fullMode: string;
     signal: string;
-    processHint: string;
     diagramLabels: [string, string, string];
     coreLabel: string;
     cityLabel: string;

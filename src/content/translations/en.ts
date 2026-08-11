@@ -28,6 +28,7 @@ export const en: SiteCopy = {
   },
   hero: {
     eyebrow: "Independent product & experience builder",
+    eyebrowParts: ["Independent product", "&", "Experience builder"],
     byline: "Created and operated by Steven Adkins",
     headline: "Ideas into useful experiences.",
     body:
@@ -38,7 +39,6 @@ export const en: SiteCopy = {
     linkMode: "Quick links only",
     fullMode: "Show full profile",
     signal: "Building useful products and stronger experiences",
-    processHint: "Move · focus · swipe",
     diagramLabels: ["BUILD", "OPERATE", "CREATE"],
     coreLabel: "ONE CLEAR POINT",
     cityLabel: "Working range",
