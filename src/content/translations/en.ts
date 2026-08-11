@@ -38,7 +38,6 @@ export const en: SiteCopy = {
     background: "View my background",
     linkMode: "Quick links only",
     fullMode: "Show full profile",
-    signal: "Building useful products and stronger experiences",
     diagramLabels: ["BUILD", "OPERATE", "CREATE"],
     coreLabel: "ONE CLEAR POINT",
     cityLabel: "Working range",

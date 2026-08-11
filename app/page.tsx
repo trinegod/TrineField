@@ -182,14 +182,14 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
           </div>
         </div>
         <aside className="route-panel" aria-label={copy.common.regions}>
-          <div className="route-panel__head"><span>{copy.hero.signal}</span><span>{copy.common.brandName}</span></div>
+          <div className="route-panel__head"><span>{copy.common.brandName} / {copy.hero.cityLabel}</span></div>
           <div className="route-map" aria-hidden="true">
             <span className="route-triangle route-triangle--outer" />
             <span className="route-point point--one" /><span className="route-point point--two" /><span className="route-point point--three" />
             <span className="route-label label--one">{copy.hero.diagramLabels[0]}</span><span className="route-label label--two">{copy.hero.diagramLabels[1]}</span><span className="route-label label--three">{copy.hero.diagramLabels[2]}</span><span className="route-trine"><TrineGlyph large /></span>
           </div>
           <p className="region-line">{copy.common.regions}</p>
-          <div className="city-list"><span>{copy.hero.cityLabel}</span><p>{copy.hero.cities.join(" · ")}</p></div>
+          <div className="city-list"><p>{copy.hero.cities.join(" · ")}</p></div>
           <p className="availability">{copy.common.status}</p>
         </aside>
       </div>

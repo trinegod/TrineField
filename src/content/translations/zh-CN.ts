@@ -22,7 +22,7 @@ export const zhCN: SiteCopy = {
     byline: "由 Steven Adkins 创建并运营",
     headline: "把想法变成有用的体验。",
     body: "Trine 是我的专业作品集，涵盖产品打造、AI 辅助工作流、运营、客户体验、UX、内容与创意执行。我帮助团队把早期想法、复杂系统和客户需求转化为更清晰的产品、更顺畅的体验与可执行的下一步。",
-    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "仅显示快捷链接", fullMode: "显示完整介绍", signal: "打造实用产品与更好的体验", diagramLabels: ["构思", "运营", "创作"], coreLabel: "清晰支点", cityLabel: "工作能力范围", cities: ["产品策略", "AI 工作流", "客户体验", "UX 与内容", "创意方向"],
+    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "仅显示快捷链接", fullMode: "显示完整介绍", diagramLabels: ["构思", "运营", "创作"], coreLabel: "清晰支点", cityLabel: "工作能力范围", cities: ["产品策略", "AI 工作流", "客户体验", "UX 与内容", "创意方向"],
   },
   profile: {
     eyebrow: "02 / 职业能力概览",

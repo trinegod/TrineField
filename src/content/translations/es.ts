@@ -22,7 +22,7 @@ export const es: SiteCopy = {
     byline: "Creada y operada por Steven Adkins",
     headline: "Ideas convertidas en experiencias útiles.",
     body: "Trine es mi portafolio profesional de desarrollo de producto, flujos asistidos por IA, operaciones, experiencia del cliente, UX, contenido y ejecución creativa. Ayudo a convertir ideas iniciales, sistemas complejos y necesidades de clientes en productos más claros, experiencias más fluidas y próximos pasos prácticos.",
-    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Solo enlaces rápidos", fullMode: "Mostrar perfil completo", signal: "Construyendo productos útiles y mejores experiencias", diagramLabels: ["IDEAR", "OPERAR", "CREAR"], coreLabel: "UN PUNTO CLARO", cityLabel: "Rango de trabajo", cities: ["Estrategia de producto", "Flujos con IA", "Experiencia del cliente", "UX y contenido", "Dirección creativa"],
+    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Solo enlaces rápidos", fullMode: "Mostrar perfil completo", diagramLabels: ["IDEAR", "OPERAR", "CREAR"], coreLabel: "UN PUNTO CLARO", cityLabel: "Rango de trabajo", cities: ["Estrategia de producto", "Flujos con IA", "Experiencia del cliente", "UX y contenido", "Dirección creativa"],
   },
   profile: {
     eyebrow: "02 / Perfil profesional",
