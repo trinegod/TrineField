@@ -21,7 +21,7 @@ export const zhCN: SiteCopy = {
     byline: "由 Steven Adkins 创建并运营",
     headline: "把想法变成有用的体验。",
     body: "Trine 是我的专业作品集，涵盖产品打造、AI 辅助工作流、运营、客户体验、UX、内容与创意执行。我帮助团队把早期想法、复杂系统和客户需求转化为更清晰的产品、更顺畅的体验与可执行的下一步。",
-    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "仅显示快捷链接", fullMode: "显示完整介绍", signal: "打造实用产品与更好的体验", diagramLabels: ["构思", "运营", "创作"], coreLabel: "清晰支点", cityLabel: "工作能力范围", cities: ["产品策略", "AI 工作流", "客户体验", "UX 与内容", "创意方向"],
+    primary: "开始交流", explore: "了解合作方向", background: "了解我的经历", linkMode: "仅显示快捷链接", fullMode: "显示完整介绍", signal: "打造实用产品与更好的体验", processHint: "移动 · 聚焦 · 滑动", diagramLabels: ["构思", "运营", "创作"], coreLabel: "清晰支点", cityLabel: "工作能力范围", cities: ["产品策略", "AI 工作流", "客户体验", "UX 与内容", "创意方向"],
   },
   profile: {
     eyebrow: "02 / 职业能力概览",
@@ -49,7 +49,7 @@ export const zhCN: SiteCopy = {
     ],
   },
   work: {
-    eyebrow: "03 / 合作", title: "我们可以这样合作。", intro: "为正在打造产品、改善运营、提升客户体验并清晰表达想法的团队提供聚焦、务实的支持。", open: "查看合作内容", close: "收起合作内容", dueDiligence: "每次合作都从明确的范围、有效的背景信息、现实的预期，以及对职责、访问权限、时间安排和交付内容的共同确认开始。",
+    eyebrow: "03 / 合作", title: "我们可以这样合作。", intro: "为正在打造产品、改善运营、提升客户体验并清晰表达想法的团队提供聚焦、务实的支持。", open: "查看合作内容", close: "收起合作内容", dueDiligenceLabel: "合作约定", dueDiligence: "每次合作都从明确的范围、有效的背景信息、现实的预期，以及对职责、访问权限、时间安排和交付内容的共同确认开始。",
     collaborations: [
       { code: "01", title: "产品与市场洞察", intro: "在投入更多时间与资源前，检验产品、信息表达或机会。", items: ["客户与用户反馈", "市场与竞品研究", "产品定位审阅", "概念评估", "客户体验分析", "验证计划"] },
       { code: "02", title: "B2B 合作关系拓展", intro: "推动更清晰、更持续的商务沟通与跟进。", items: ["合作伙伴与企业调研", "B2B 外联与线索筛选", "会前准备与会后跟进", "合作方案撰写", "商业机会评估", "合作伙伴沟通支持"] },

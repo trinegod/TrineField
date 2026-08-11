@@ -21,7 +21,7 @@ export const es: SiteCopy = {
     byline: "Creada y operada por Steven Adkins",
     headline: "Ideas convertidas en experiencias útiles.",
     body: "Trine es mi portafolio profesional de desarrollo de producto, flujos asistidos por IA, operaciones, experiencia del cliente, UX, contenido y ejecución creativa. Ayudo a convertir ideas iniciales, sistemas complejos y necesidades de clientes en productos más claros, experiencias más fluidas y próximos pasos prácticos.",
-    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Solo enlaces rápidos", fullMode: "Mostrar perfil completo", signal: "Construyendo productos útiles y mejores experiencias", diagramLabels: ["IDEAR", "OPERAR", "CREAR"], coreLabel: "UN PUNTO CLARO", cityLabel: "Rango de trabajo", cities: ["Estrategia de producto", "Flujos con IA", "Experiencia del cliente", "UX y contenido", "Dirección creativa"],
+    primary: "Iniciar una conversación", explore: "Explorar colaboración", background: "Ver mi experiencia", linkMode: "Solo enlaces rápidos", fullMode: "Mostrar perfil completo", signal: "Construyendo productos útiles y mejores experiencias", processHint: "Mover · enfocar · deslizar", diagramLabels: ["IDEAR", "OPERAR", "CREAR"], coreLabel: "UN PUNTO CLARO", cityLabel: "Rango de trabajo", cities: ["Estrategia de producto", "Flujos con IA", "Experiencia del cliente", "UX y contenido", "Dirección creativa"],
   },
   profile: {
     eyebrow: "02 / Perfil profesional",
@@ -49,7 +49,7 @@ export const es: SiteCopy = {
     ],
   },
   work: {
-    eyebrow: "03 / Colaboración", title: "Formas de trabajar juntos.", intro: "Apoyo enfocado para equipos que construyen productos, mejoran operaciones, fortalecen experiencias de cliente y comunican ideas con claridad.", open: "Ver posibilidades", close: "Ocultar posibilidades", dueDiligence: "Cada colaboración comienza con un alcance claro, contexto útil, expectativas realistas y acuerdo mutuo sobre responsabilidades, acceso, plazos y entregables.",
+    eyebrow: "03 / Colaboración", title: "Formas de trabajar juntos.", intro: "Apoyo enfocado para equipos que construyen productos, mejoran operaciones, fortalecen experiencias de cliente y comunican ideas con claridad.", open: "Ver posibilidades", close: "Ocultar posibilidades", dueDiligenceLabel: "Acuerdo de trabajo", dueDiligence: "Cada colaboración comienza con un alcance claro, contexto útil, expectativas realistas y acuerdo mutuo sobre responsabilidades, acceso, plazos y entregables.",
     collaborations: [
       { code: "01", title: "Perspectiva de Producto y Mercado", intro: "Evaluar un producto, mensaje u oportunidad antes de invertir más tiempo y recursos.", items: ["Comentarios de clientes y usuarios", "Investigación de mercado y competencia", "Revisión de posicionamiento", "Evaluación de conceptos", "Análisis de experiencia del cliente", "Planificación de validación"] },
       { code: "02", title: "Desarrollo de Alianzas B2B", intro: "Construir conversaciones empresariales y seguimientos más claros y consistentes.", items: ["Investigación de empresas y alianzas", "Prospección B2B y calificación de contactos", "Preparación y seguimiento de reuniones", "Propuestas de colaboración", "Evaluación de oportunidades", "Apoyo en comunicación con socios"] },

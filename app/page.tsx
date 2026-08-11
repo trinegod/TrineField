@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useMemo, useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -97,6 +97,61 @@ function Header() {
   );
 }
 
+function ProcessRail() {
+  const { copy } = useLocale();
+  const [activeIndex, setActiveIndex] = useState(1);
+  const touchStartX = useRef<number | null>(null);
+  const processLabels = copy.common.regions.split("↔").map((label) => label.trim());
+
+  const selectFromPointer = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const progress = Math.min(0.999, Math.max(0, (event.clientX - bounds.left) / bounds.width));
+    setActiveIndex(Math.floor(progress * processLabels.length));
+  };
+
+  const beginSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch") return;
+    touchStartX.current = event.clientX;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const finishSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch" || touchStartX.current === null) return;
+    const distance = event.clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(distance) < 28) return;
+    setActiveIndex((current) => Math.min(2, Math.max(0, current + (distance < 0 ? 1 : -1))));
+  };
+
+  return (
+    <aside className="process-rail" aria-label={copy.common.regions}>
+      <div className="process-rail__head">
+        <span>{copy.hero.signal}</span>
+        <span>{copy.hero.processHint}</span>
+      </div>
+      <div className="process-track" onPointerMove={selectFromPointer} onPointerDown={beginSwipe} onPointerUp={finishSwipe}>
+        <span className="process-runner" style={{ "--process-index": activeIndex } as React.CSSProperties} aria-hidden="true"><i /></span>
+        {processLabels.map((label, index) => (
+          <button
+            className={activeIndex === index ? "is-active" : ""}
+            type="button"
+            aria-pressed={activeIndex === index}
+            onPointerEnter={() => setActiveIndex(index)}
+            onFocus={() => setActiveIndex(index)}
+            onClick={() => setActiveIndex(index)}
+            key={label}
+          >
+            <strong>{label}</strong>
+            <small>{copy.hero.diagramLabels[index]}</small>
+          </button>
+        ))}
+      </div>
+      <div className="process-rail__range"><span>{copy.hero.cityLabel}</span><p>{copy.hero.cities.join(" · ")}</p></div>
+    </aside>
+  );
+}
+
 function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompactMode: (value: boolean) => void }) {
   const { copy, locale } = useLocale();
   return (
@@ -109,7 +164,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
         <span className="trine-core"><i /><em>{copy.hero.coreLabel}</em></span>
       </div>
       <div className="hero-topline">
-        <span className="eyebrow"><span className="live-dot" />{copy.hero.eyebrow}</span>
+        <span className="eyebrow"><span className="live-dot" /><span className="eyebrow-copy">{copy.hero.eyebrow}</span></span>
       </div>
       <div className="hero-grid">
         <div className="hero-copy">
@@ -135,6 +190,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
           <p className="availability">{copy.common.status}</p>
         </aside>
       </div>
+      <ProcessRail />
       <div className="quick-actions" aria-label={copy.hero.linkMode}>
         <SocialAction social="instagram" label={copy.links.instagram} />
         <SocialAction social="linkedin" label={copy.links.linkedin} />
@@ -210,7 +266,7 @@ function WorkSection() {
           </details>
         ))}
       </div>
-      <div className="due-diligence"><span>06 / —</span><p>{copy.work.dueDiligence}</p></div>
+      <div className="due-diligence"><span className="due-diligence__label"><i aria-hidden="true" />{copy.work.dueDiligenceLabel}</span><p>{copy.work.dueDiligence}</p></div>
     </section>
   );
 }

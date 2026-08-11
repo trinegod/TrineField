@@ -153,9 +153,9 @@ function Beam({ length, position, rotation }: { length: number; position: [numbe
     <mesh position={position} rotation={[0, 0, rotation]} castShadow>
       <boxGeometry args={[length, 0.075, 0.13]} />
       <meshPhysicalMaterial
-        color="#171a15"
+        color="#1b2118"
         emissive="#8cac43"
-        emissiveIntensity={0.045}
+        emissiveIntensity={0.07}
         metalness={0.88}
         roughness={0.21}
         clearcoat={0.72}

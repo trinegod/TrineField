@@ -25,6 +25,8 @@ test("server-renders the complete Trine professional portfolio", async () => {
   assert.match(html, /Created and operated by Steven Adkins/);
   assert.match(html, /Professional profile/);
   assert.match(html, /Product ↔ Experience ↔ Execution/);
+  assert.match(html, /Move · focus · swipe/);
+  assert.match(html, /Working agreement/);
   assert.match(html, /Tell me what you’re building\./);
   assert.match(html, /Stevenadkins917@gmail\.com/);
   assert.match(html, /@tr1negod/);

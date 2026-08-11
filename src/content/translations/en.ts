@@ -38,6 +38,7 @@ export const en: SiteCopy = {
     linkMode: "Quick links only",
     fullMode: "Show full profile",
     signal: "Building useful products and stronger experiences",
+    processHint: "Move · focus · swipe",
     diagramLabels: ["BUILD", "OPERATE", "CREATE"],
     coreLabel: "ONE CLEAR POINT",
     cityLabel: "Working range",
@@ -89,6 +90,7 @@ export const en: SiteCopy = {
     intro: "Focused support for teams building products, improving operations, strengthening customer experiences, and communicating ideas clearly.",
     open: "View possibilities",
     close: "Hide possibilities",
+    dueDiligenceLabel: "Working agreement",
     dueDiligence: "Every engagement starts with a clear scope, useful context, realistic expectations, and mutual agreement on responsibilities, access, timelines, and deliverables.",
     collaborations: [
       { code: "01", title: "Product & Market Insight", intro: "Pressure-test a product, message, or opportunity before committing more time and resources.", items: ["Customer and user feedback", "Market and competitor research", "Product positioning review", "Concept evaluation", "Customer-experience analysis", "Validation planning"] },

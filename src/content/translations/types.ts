@@ -45,6 +45,7 @@ export interface SiteCopy {
     linkMode: string;
     fullMode: string;
     signal: string;
+    processHint: string;
     diagramLabels: [string, string, string];
     coreLabel: string;
     cityLabel: string;
@@ -83,6 +84,7 @@ export interface SiteCopy {
     intro: string;
     open: string;
     close: string;
+    dueDiligenceLabel: string;
     dueDiligence: string;
     collaborations: Collaboration[];
   };
