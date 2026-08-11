@@ -145,12 +145,14 @@ html[lang="zh-CN"] .hero-body { line-height: 1.85; }
 .route-point { position: absolute; z-index: 2; width: 9px; height: 9px; border: 2px solid var(--signal); background: var(--ink); transform: rotate(45deg); }
 .point--one { left: calc(50% - 4px); top: 16%; }.point--two { left: calc(21% - 4px); bottom: calc(22% - 4px); }.point--three { right: calc(21% - 4px); bottom: calc(22% - 4px); }
 .route-label { position: absolute; font: .6rem var(--font-geist-mono), monospace; color: var(--paper); }
-.label--one { left: calc(50% - 8px); top: 5%; }.label--two { left: 17%; bottom: 5%; }.label--three { right: 12%; bottom: 5%; }
+.label--one { left: 50%; top: 5%; transform: translateX(-50%); }.label--two { left: 21%; bottom: 5%; transform: translateX(-50%); }.label--three { left: 79%; bottom: 5%; transform: translateX(-50%); }
 .route-trine { position: absolute; z-index: 3; left: 50%; top: 56%; transform: translate(-50%,-50%); opacity: .72; }
 .region-line { margin: 18px 0; text-align: center; font-size: clamp(.88rem, 1.2vw, 1.05rem); }
 .city-list { padding: 14px 0; border-top: 1px solid var(--line); text-align: center; }
-.city-list p { margin: 0; color: #adaca6; font-size: .72rem; line-height: 1.5; }
-.availability { margin: 0; padding: 12px; color: var(--ink); background: var(--signal); border-radius: 8px; font-size: .7rem; line-height: 1.4; }
+.city-list p { margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px 10px; align-items: center; color: #adaca6; font-size: .72rem; line-height: 1.4; }
+.city-list p span { grid-column: span 2; }
+.city-list p span:nth-child(n+4) { grid-column: span 3; }
+.availability { margin: 0; padding: 12px; color: var(--ink); background: var(--signal); border-radius: 8px; font-size: .7rem; line-height: 1.4; text-align: center; }
 .process-rail { display: none; position: relative; z-index: 3; width: min(100%, 1160px); margin: clamp(76px, 8vw, 112px) auto 0; padding: 18px 22px 20px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-sm); background: linear-gradient(145deg, rgba(20,23,18,.8), rgba(8,9,8,.64)); box-shadow: 0 30px 90px rgba(0,0,0,.36), inset 0 1px rgba(242,243,236,.04); backdrop-filter: blur(16px) saturate(115%); }
 .process-rail::before { content: ""; position: absolute; inset: -120% 35% auto; height: 280px; background: radial-gradient(circle, rgba(200,243,106,.11), transparent 66%); pointer-events: none; }
 .process-rail__head { position: relative; display: flex; justify-content: center; color: #81827c; font: .6rem var(--font-geist-mono), monospace; text-align: center; text-transform: uppercase; letter-spacing: .11em; }
@@ -365,7 +367,10 @@ main[data-compact="true"] .hero { min-height: calc(100svh - 80px); }
 @media (min-width: 1001px) {
   .route-panel { display: none; }
   .process-rail { display: block; }
-  .quick-actions { margin-top: 24px; }
+  .quick-actions { margin-top: 24px; grid-template-columns: repeat(12, 1fr); }
+  .quick-actions .action-link { grid-column: span 2; }
+  .quick-actions .action-link:nth-child(7) { grid-column: 4 / span 2; border-left: 1px solid var(--line); }
+  .quick-actions .action-link:nth-child(n+7) { border-top: 1px solid var(--line); }
 }
 
 @media (min-width: 721px) {
@@ -414,7 +419,7 @@ main[data-compact="true"] .hero { min-height: calc(100svh - 80px); }
   .hero-trine .trine-core i { width: 10px; height: 10px; background: conic-gradient(from 45deg, #f7f8f1, #9ca292, #ffffff, #cfd4c3, #f7f8f1); border: 1px solid rgba(255,255,255,.72); box-shadow: 0 0 0 5px rgba(200,243,106,.045), 0 0 24px rgba(242,243,236,.34); animation: mobile-core-float 4.2s ease-in-out infinite; }
   .hero-trine .trine-core em { font-size: .38rem; letter-spacing: .14em; }
   .hero-topline { margin-bottom: 42px; }
-  .hero-topline .eyebrow { width: 58%; max-width: 58%; display: block; line-height: 1.42; text-align: center; transform: translateY(16px); }
+  .hero-topline .eyebrow { width: 58%; max-width: 58%; display: block; line-height: 1.42; text-align: center; transform: translateY(22px); }
   .hero-topline .live-dot, .hero-topline .eyebrow-copy { display: none; }
   .eyebrow-mobile { display: grid; justify-items: center; gap: 1px; }
   .eyebrow-mobile > span { display: block; }

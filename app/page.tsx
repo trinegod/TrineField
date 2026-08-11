@@ -189,7 +189,7 @@ function Hero({ compactMode, setCompactMode }: { compactMode: boolean; setCompac
             <span className="route-label label--one">{copy.hero.diagramLabels[0]}</span><span className="route-label label--two">{copy.hero.diagramLabels[1]}</span><span className="route-label label--three">{copy.hero.diagramLabels[2]}</span><span className="route-trine"><TrineGlyph large /></span>
           </div>
           <p className="region-line">{copy.common.regions}</p>
-          <div className="city-list"><p>{copy.hero.cities.join(" · ")}</p></div>
+          <div className="city-list"><p>{copy.hero.cities.map((item) => <span key={item}>{item}</span>)}</p></div>
           <p className="availability">{copy.common.status}</p>
         </aside>
       </div>
