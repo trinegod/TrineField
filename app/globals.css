@@ -415,7 +415,7 @@ main[data-compact="true"] .hero { min-height: calc(100svh - 80px); }
   .hero-trine::before { inset: 5%; }
   .hero-trine .trine-shell::after { inset: 3px; }
   .hero-trine .trine-vertex { font-size: .42rem; gap: 5px; }
-  .hero-trine .trine-vertex--top { top: -8px; }
+  .hero-trine .trine-vertex--top { top: -16px; }
   .hero-trine .trine-vertex i { width: 6px; height: 6px; box-shadow: 0 0 0 4px rgba(200,243,106,.06), 0 0 18px rgba(200,243,106,.32); }
   .hero-trine .trine-core { width: 124px; gap: 15px; }
   .hero-trine .trine-core i { width: 10px; height: 10px; background: conic-gradient(from 45deg, #f7f8f1, #9ca292, #ffffff, #cfd4c3, #f7f8f1); border: 1px solid rgba(255,255,255,.72); box-shadow: 0 0 0 5px rgba(200,243,106,.045), 0 0 24px rgba(242,243,236,.34); animation: mobile-core-float 4.2s ease-in-out infinite; }

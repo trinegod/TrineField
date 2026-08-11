@@ -27,8 +27,8 @@ export async function generateMetadata(): Promise<Metadata> {
     applicationName: "Trine",
     keywords: ["product builder", "AI product development", "product operations", "UX/UI design", "customer experience", "B2B partnerships", "creative direction", "bilingual professional"],
     icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }], shortcut: "/favicon.svg", apple: "/icon.png" },
-    openGraph: { title, description, type: "website", locale: "en_US", siteName: "Trine", images: [{ url: new URL("/og-trinefield-v7.png", base).toString(), width: 1536, height: 1024, alt: "Trine — Ideas into useful experiences." }] },
-    twitter: { card: "summary_large_image", title, description, images: [new URL("/og-trinefield-v7.png", base).toString()] },
+    openGraph: { title, description, type: "website", locale: "en_US", siteName: "Trine", images: [{ url: new URL("/og-trinefield-v15.png", base).toString(), width: 1536, height: 1024, alt: "Trine — Ideas into useful experiences." }] },
+    twitter: { card: "summary_large_image", title, description, images: [new URL("/og-trinefield-v15.png", base).toString()] },
     alternates: { canonical: base },
     robots: { index: true, follow: true },
   };
