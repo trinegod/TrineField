@@ -13,7 +13,7 @@ export const en: SiteCopy = {
     ownerName: "Steven Adkins",
     descriptor: "Product, AI, Operations, UX & Creative Work",
     regions: "Product ↔ Experience ↔ Execution",
-    status: "Open to product, operations, AI, UX, content, and creative collaborations.",
+    status: "Open to Product, Operations, AI, UX, Content, and creative collaborations.",
     languageNote:
       "This site is available in English, Spanish, and Simplified Chinese. Direct conversations may be conducted in English or Spanish, with translation assistance when needed.",
   },
@@ -41,7 +41,7 @@ export const en: SiteCopy = {
     diagramLabels: ["BUILD", "OPERATE", "CREATE"],
     coreLabel: "ONE CLEAR POINT",
     cityLabel: "Working range",
-    cities: ["Product strategy", "AI workflows", "Customer experience", "UX & content", "Creative direction"],
+    cities: ["Product Strategy", "AI Workflows", "Customer Experience", "UX & Content", "Creative Direction"],
   },
   profile: {
     eyebrow: "02 / Professional profile",
